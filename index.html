@@ -30,23 +30,176 @@
       <main>
         <div class="container" v-if="report">
 
-          <h2 style="margin-top:20px;"> Summary </h2>
-          <hr>
-          
-          <div class="row" style="margin-top:5px;">
-            
+              <h2 style="margin-top:20px;"> Summary </h2>
+              <hr>
+              
+              <div class="row" style="margin-top:5px;">
+                
+                  <div class="col-lg-3">
+                      <div class="card card-stats mb-4 mb-xl-0">
+                          <div class="card-body" style="">
+                              <div class="row">
+                                  <div class="col">
+                                      <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ deadcode</small></h2>
+                                      <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.deadcode.run == 0" >Skip</span>
+                                      <span class="h1 font-weight-bold mb-0" v-if="report.lint.deadcode.run == 1" v-bind:class="{ 'text-warning': report.lint.deadcode.cnt > 0, 'text-success': report.lint.deadcode.cnt == 0 }">{{ report.lint.deadcode.cnt }} found</span>
+                                  </div>
+                              </div>
+                              <p class="mt-3 mb-0 text-muted text-sm-right">
+                                  <span class="text-success mr-2"></span>
+                                <span class="text-sm"><a href="#details" @click="tabIndex=0">details</a></span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                
+                  <div class="col-lg-3">
+                      <div class="card card-stats mb-4 mb-xl-0">
+                          <div class="card-body" style="">
+                              <div class="row">
+                                  <div class="col">
+                                      <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ errcheck</small></h2>
+                                      <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.errcheck.run == 0" >Skip</span>
+                                      <span class="h1 font-weight-bold mb-0" v-if="report.lint.errcheck.run == 1" v-bind:class="{ 'text-warning': report.lint.errcheck.cnt > 0, 'text-success': report.lint.errcheck.cnt == 0 }">{{ report.lint.errcheck.cnt }} found</span>
+                                  </div>
+                              </div>
+                              <p class="mt-3 mb-0 text-muted text-sm-right">
+                                <span class="text-success mr-2"></span>
+                                <span class="text-sm"><a href="#details" @click="tabIndex=1">details</a></span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                
+                  <div class="col-lg-3">
+                      <div class="card card-stats mb-4 mb-xl-0">
+                          <div class="card-body" style="">
+                              <div class="row">
+                                  <div class="col">
+                                      <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ staticcheck</small></h2>
+                                      <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.staticcheck.run == 0" >Skip</span>
+                                      <span class="h1 font-weight-bold mb-0" v-if="report.lint.staticcheck.run == 1" v-bind:class="{ 'text-warning': report.lint.staticcheck.cnt > 0, 'text-success': report.lint.staticcheck.cnt == 0 }">{{ report.lint.staticcheck.cnt }} found</span>
+                                  </div>
+                              </div>
+                              <p class="mt-3 mb-0 text-muted text-sm-right">
+                                <span class="text-success mr-2"></span>
+                                <span class="text-sm"><a href="#details" @click="tabIndex=2">details</a></span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                
+                  <div class="col-lg-3">
+                      <div class="card card-stats mb-4 mb-xl-0">
+                          <div class="card-body" style="">
+                              <div class="row">
+                                  <div class="col">
+                                      <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ revive</small></h2>
+                                      <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.revive.run == 0" >Skip</span>
+                                      <span class="h1 font-weight-bold mb-0" v-if="report.lint.revive.run == 1" v-bind:class="{ 'text-warning': report.lint.revive.cnt > 0, 'text-success': report.lint.revive.cnt == 0 }">{{ report.lint.revive.cnt }} found</span>
+                                  </div>
+                              </div>
+                              <p class="mt-3 mb-0 text-muted text-sm-right">
+                                <span class="text-success mr-2"></span>
+                                <span class="text-sm"><a href="#details" @click="tabIndex=3">details</a></span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>           
+
+              </div>
+
+              <div class="row" style="margin-top:5px;">
+                
+                <div class="col-lg-3">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body" style="">
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ gofmt</small></h2>
+                                    <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.gofmt.run == 0" >Skip</span>
+                                    <span class="h1 font-weight-bold mb-0" v-if="report.lint.gofmt.run == 1" v-bind:class="{ 'text-warning': report.lint.gofmt.cnt > 0, 'text-success': report.lint.gofmt.cnt == 0 }">{{ report.lint.gofmt.cnt }} found</span>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-muted text-sm-right">
+                                <span class="text-success mr-2"></span>
+                              <span class="text-sm"><a href="#details" @click="tabIndex=4">details</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="col-lg-3">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body" style="">
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ govet</small></h2>
+                                    <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.govet.run == 0" >Skip</span>
+                                    <span class="h1 font-weight-bold mb-0" v-if="report.lint.govet.run == 1" v-bind:class="{ 'text-warning': report.lint.govet.cnt > 0, 'text-success': report.lint.govet.cnt == 0 }">{{ report.lint.govet.cnt }} found</span>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-muted text-sm-right">
+                              <span class="text-success mr-2"></span>
+                              <span class="text-sm"><a href="#details" @click="tabIndex=5">details</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="col-lg-3">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body" style="">
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ gocyclo</small></h2>
+                                    <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.gocyclo.run == 0" >Skip</span>
+                                    <span class="h1 font-weight-bold mb-0" v-if="report.lint.gocyclo.run == 1" v-bind:class="{ 'text-warning': report.lint.gocyclo.cnt > 0, 'text-success': report.lint.gocyclo.cnt == 0 }">{{ report.lint.gocyclo.cnt }} found</span>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-muted text-sm-right">
+                              <span class="text-success mr-2"></span>
+                              <span class="text-sm"><a href="#details" @click="tabIndex=6">details</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="col-lg-3">
+                    <div class="card card-stats mb-4 mb-xl-0">
+                        <div class="card-body" style="">
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ golint</small></h2>
+                                    <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.golint.run == 0" >Skip</span>
+                                    <span class="h1 font-weight-bold mb-0" v-if="report.lint.golint.run == 1" v-bind:class="{ 'text-warning': report.lint.golint.cnt > 0, 'text-success': report.lint.golint.cnt == 0 }">{{ report.lint.golint.cnt }} found</span>
+                                </div>
+                            </div>
+                            <p class="mt-3 mb-0 text-muted text-sm-right">
+                              <span class="text-success mr-2"></span>
+                              <span class="text-sm"><a href="#details" @click="tabIndex=7">details</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>           
+
+            </div>   
+        
+            <div class="row" style="margin-top:5px;">
+                
               <div class="col-lg-3">
                   <div class="card card-stats mb-4 mb-xl-0">
                       <div class="card-body" style="">
                           <div class="row">
                               <div class="col">
-                                  <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ deadcode</small></h2>
-                                  <span class="h1 font-weight-bold mb-0" v-bind:class="{ 'text-warning': report.lint.deadcode.cnt > 0, 'text-success': report.lint.deadcode.cnt == 0 }">{{ report.lint.deadcode.cnt }} found</span>
+                                  <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ ineffassign</small></h2>
+                                  <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.ineffassign.run == 0" >Skip</span>
+                                  <span class="h1 font-weight-bold mb-0" v-if="report.lint.ineffassign.run == 1" v-bind:class="{ 'text-warning': report.lint.ineffassign.cnt > 0, 'text-success': report.lint.ineffassign.cnt == 0 }">{{ report.lint.ineffassign.cnt }} found</span>
                               </div>
                           </div>
                           <p class="mt-3 mb-0 text-muted text-sm-right">
                               <span class="text-success mr-2"></span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=0">details</a></span>
+                            <span class="text-sm"><a href="#details" @click="tabIndex=8">details</a></span>
                           </p>
                       </div>
                   </div>
@@ -57,53 +210,21 @@
                       <div class="card-body" style="">
                           <div class="row">
                               <div class="col">
-                                  <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ errcheck</small></h2>
-                                  <span class="h1 font-weight-bold mb-0" v-bind:class="{ 'text-warning': report.lint.errcheck.cnt > 0, 'text-success': report.lint.errcheck.cnt == 0 }">{{ report.lint.errcheck.cnt }} found</span>
+                                  <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ misspell</small></h2>
+                                  <span class="h1 font-weight-bold mb-0 text-info" v-if="report.lint.misspell.run == 0" >Skip</span>
+                                  <span class="h1 font-weight-bold mb-0" v-if="report.lint.misspell.run == 1" v-bind:class="{ 'text-warning': report.lint.misspell.cnt > 0, 'text-success': report.lint.misspell.cnt == 0 }">{{ report.lint.misspell.cnt }} found</span>
                               </div>
                           </div>
                           <p class="mt-3 mb-0 text-muted text-sm-right">
                             <span class="text-success mr-2"></span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=1">details</a></span>
+                            <span class="text-sm"><a href="#details" @click="tabIndex=9">details</a></span>
                           </p>
                       </div>
                   </div>
               </div>
-            
-              <div class="col-lg-3">
-                  <div class="card card-stats mb-4 mb-xl-0">
-                      <div class="card-body" style="">
-                          <div class="row">
-                              <div class="col">
-                                  <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ staticcheck</small></h2>
-                                  <span class="h1 font-weight-bold mb-0" v-bind:class="{ 'text-warning': report.lint.staticcheck.cnt > 0, 'text-success': report.lint.staticcheck.cnt == 0 }">{{ report.lint.staticcheck.cnt }} found</span>
-                              </div>
-                          </div>
-                          <p class="mt-3 mb-0 text-muted text-sm-right">
-                            <span class="text-success mr-2"></span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=2">details</a></span>
-                          </p>
-                      </div>
-                  </div>
-              </div>
-            
-              <div class="col-lg-3">
-                  <div class="card card-stats mb-4 mb-xl-0">
-                      <div class="card-body" style="">
-                          <div class="row">
-                              <div class="col">
-                                  <h2 class="card-title text-muted mb-0"><strong>Lint</strong><small class="ml-2 mb-0 text-muted">/ revive</small></h2>
-                                  <span class="h1 font-weight-bold mb-0" v-bind:class="{ 'text-warning': report.lint.revive.cnt > 0, 'text-success': report.lint.revive.cnt == 0 }">{{ report.lint.revive.cnt }} found</span>
-                              </div>
-                          </div>
-                          <p class="mt-3 mb-0 text-muted text-sm-right">
-                            <span class="text-success mr-2"></span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=3">details</a></span>
-                          </p>
-                      </div>
-                  </div>
-              </div>           
 
           </div>
+
           
           <div class="row" style="margin-top:5px;">
             
@@ -113,12 +234,13 @@
                           <div class="row">
                               <div class="col">
                                   <h2 class="card-title text-muted mb-0"><strong>Test</strong><small class="ml-2 mb-0 text-muted">/ unit</small></h2>
-                                  <span class="h1 font-weight-bold mb-0" v-bind:class="{ 'text-danger': report.test.unit.failCnt > 0, 'text-success': report.test.unit.failCnt == 0 }">{{ report.test.unit.failCnt }} failure</span>
+                                  <span class="h1 font-weight-bold mb-0 text-info" v-if="report.test.unit.run == 0" >Skip</span>
+                                  <span class="h1 font-weight-bold mb-0" v-if="report.test.unit.run == 1" v-bind:class="{ 'text-danger': report.test.unit.failCnt > 0, 'text-success': report.test.unit.failCnt == 0 }">{{ report.test.unit.failCnt }} failure</span>
                               </div>
                           </div>
                           <p class="mt-3 mb-0 text-muted text-sm-right">
                             <span class="text-success mr-2" >{{ report.test.unit.allCnt }} cases</span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=4">details</a></span>
+                            <span class="text-sm"><a href="#details" @click="tabIndex=10">details</a></span>
                           </p>
                       </div>
                   </div>
@@ -130,13 +252,14 @@
                           <div class="row">
                               <div class="col">
                                   <h2 class="card-title text-muted mb-0"><strong>Test</strong><small class="ml-2 mb-0 text-muted">/ coverage</small></h2>
-                                  <span class="h1 font-weight-bold mb-0 text-danger" v-if="report.test.coverage.check > 0" >Error</span>
-                                  <span class="h1 font-weight-bold mb-0 text-success" v-if="report.test.coverage.check == 0" >{{ report.test.coverage.total }}</span>
+                                  <span class="h1 font-weight-bold mb-0 text-info" v-if="report.test.coverage.run == 0" >Skip</span>
+                                  <span class="h1 font-weight-bold mb-0 text-danger" v-if="report.test.coverage.run == 1 && report.test.coverage.check > 0" >Error</span>
+                                  <span class="h1 font-weight-bold mb-0 text-success" v-if="report.test.coverage.run == 1 && report.test.coverage.check == 0" >{{ report.test.coverage.total }}</span>
                               </div>
                           </div>
                           <p class="mt-3 mb-0 text-muted text-sm-right">
                             <span class="text-success mr-2" ></span>
-                            <span class="text-sm"><a :href="coveragePath" target="_blank">details</a></span>
+                            <span class="text-sm"><a v-if="report.test.coverage.run == 1" :href="coveragePath" target="_blank">details</a></span>
                           </p>
                       </div>
                   </div>
@@ -148,31 +271,34 @@
                           <div class="row">
                               <div class="col">
                                   <h2 class="card-title text-muted mb-0"><strong>Test</strong><small class="ml-2 mb-0 text-muted">/ go build</small></h2>
-                                  <span class="h1 font-weight-bold mb-0 text-danger" v-if="report.build.check > 0" >Error</span>
-                                  <span class="h1 font-weight-bold mb-0 text-success" v-if="report.build.check == 0" >Success</span>
+                                  <span class="h1 font-weight-bold mb-0 text-info" v-if="report.gobuild.run == 0" >Skip</span>
+                                  <span class="h1 font-weight-bold mb-0 text-danger" v-if="report.gobuild.run == 1 && report.gobuild.check > 0" >Error</span>
+                                  <span class="h1 font-weight-bold mb-0 text-success" v-if="report.gobuild.run == 1 && report.gobuild.check == 0" >Success</span>
                               </div>
                           </div>
                           <p class="mt-3 mb-0 text-muted text-sm-right">
                             <span class="text-success mr-2" ></span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=5">details</a></span>
+                            <span class="text-sm"><a href="#details" @click="tabIndex=11">details</a></span>
                           </p>
                       </div>
                   </div>
               </div>
 
+            
               <div class="col-lg-3">
                 <div class="card card-stats mb-4 mb-xl-0">
                     <div class="card-body" style="">
                         <div class="row">
                             <div class="col">
-                                <h2 class="card-title text-muted mb-0"><strong>Self Host</strong><small class="ml-2 mb-0 text-muted">/ OS Ver.</small></h2>
-                                <span class="h1 font-weight-bold mb-0 text-danger" v-if="report.selfhost.check > 0" >Error</span>
-                                <span class="h1 font-weight-bold mb-0 text-success" v-if="report.selfhost.check == 0" >Success</span>
+                              <h2 class="card-title text-muted mb-0"><strong>Self Host</strong><small class="ml-2 mb-0 text-muted">/ OS </small></h2>
+                              <span class="h1 font-weight-bold mb-0 text-info" v-if="report.selfhost.run == 0" >Skip</span>
+                              <span class="h1 font-weight-bold mb-0 text-danger" v-if="report.selfhost.run == 1 && report.selfhost.check > 0" >Error</span>
+                              <span class="h1 font-weight-bold mb-0 text-success" v-if="report.selfhost.run == 1 && report.selfhost.check == 0" >Success</span>
                             </div>
                         </div>
                         <p class="mt-3 mb-0 text-muted text-sm-right">
-                          <span class="text-success mr-2" ></span>
-                          <span class="text-sm"><a href="#details" @click="tabIndex=8">details</a></span>
+                          <span class="text-success mr-2"></span>
+                          <span class="text-sm"><a href="#details" @click="tabIndex=12">details</a></span>
                         </p>
                     </div>
                 </div>
@@ -195,7 +321,7 @@
                           </div>
                           <p class="mt-3 mb-0 text-muted text-sm-right">
                             <span class="text-success mr-2" ></span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=6">details</a></span>
+                            <span class="text-sm"><a href="#details" @click="tabIndex=13">details</a></span>
                           </p>
                       </div>
                   </div>
@@ -214,7 +340,7 @@
                           </div>
                           <p class="mt-3 mb-0 text-muted text-sm-right">
                             <span class="text-success mr-2" ></span>
-                            <span class="text-sm"><a href="#details" @click="tabIndex=7">details</a></span>
+                            <span class="text-sm"><a href="#details" @click="tabIndex=14">details</a></span>
                           </p>
                       </div>
                   </div>
@@ -248,6 +374,36 @@
                     <textarea  style="width:100%; min-height:600px;"> {{ report.lint.revive.details }} </textarea>
                   </b-card-text>
                 </b-tab>  
+                <b-tab title="gofmt" >
+                  <b-card-text>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.lint.gofmt.details }} </textarea>
+                  </b-card-text>
+                </b-tab> 
+                <b-tab title="govet" >
+                  <b-card-text>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.lint.govet.details }} </textarea>
+                  </b-card-text>
+                </b-tab> 
+                <b-tab title="gocyclo" >
+                  <b-card-text>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.lint.gocyclo.details }} </textarea>
+                  </b-card-text>
+                </b-tab> 
+                <b-tab title="golint" >
+                  <b-card-text>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.lint.golint.details }} </textarea>
+                  </b-card-text>
+                </b-tab> 
+                <b-tab title="ineffassign" >
+                  <b-card-text>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.lint.ineffassign.details }} </textarea>
+                  </b-card-text>
+                </b-tab>
+                <b-tab title="misspell" >
+                  <b-card-text>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.lint.misspell.details }} </textarea>
+                  </b-card-text>
+                </b-tab> 
                 <b-tab title="unit" >
                   <b-card-text>
                     <textarea  style="width:100%; min-height:600px;"> {{ report.test.unit.details }} </textarea>
@@ -255,9 +411,14 @@
                 </b-tab> 
                 <b-tab title="go build" >
                   <b-card-text>
-                    <textarea  style="width:100%; min-height:600px;"> {{ report.build.details }} </textarea>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.gobuild.details }} </textarea>
                   </b-card-text>
                 </b-tab>  
+                <b-tab title="self host" >
+                  <b-card-text>
+                    <textarea  style="width:100%; min-height:600px;"> {{ report.selfhost.details }} </textarea>
+                  </b-card-text>
+                </b-tab>                 
                 <b-tab title="docker build" >
                   <b-card-text>
                     <textarea  style="width:100%; min-height:600px;"> {{ report.deploy.dockerBuild.details }} </textarea>
@@ -267,12 +428,7 @@
                   <b-card-text>
                     <textarea  style="width:100%; min-height:600px;"> {{ report.deploy.publish.details }} </textarea>
                   </b-card-text>
-                </b-tab>     
-                <b-tab title="self host runner" >
-                  <b-card-text>
-                    <textarea  style="width:100%; min-height:600px;"> {{ report.selfhost.details }} </textarea>
-                  </b-card-text>
-                </b-tab>                            
+                </b-tab>                
               </b-tabs>
             </b-card>
           </div>        
@@ -296,55 +452,93 @@
             title: '',
             lint: {
               deadcode: {
-                cnt: '',
+                run: 0,
+                cnt: 0,
                 details: ''
               },
               errcheck: {
-                cnt: '',
+                run: 0,
+                cnt: 0,
                 details: ''
               },
               staticcheck: {
-                cnt: '',
+                run: 0,
+                cnt: 0,
                 details: ''
               },
               revive: {
-                cnt: '',
+                run: 0,
+                cnt: 0,
                 details: ''
-              }          
+              },
+              gofmt: {
+                run: 0,
+                cnt: 0,
+                details: ''
+              },
+              govet: {
+                run: 0,
+                cnt: 0,
+                details: ''
+              },
+              gocyclo: {
+                run: 0,
+                cnt: 0,
+                details: ''
+              },
+              golint: {
+                run: 0,
+                cnt: 0,
+                details: ''
+              },
+              ineffassign: {
+                run: 0,
+                cnt: 0,
+                details: ''
+              },
+              misspell: {
+                run: 0,
+                cnt: 0,
+                details: ''
+              }         
             },
             test: {
               unit: {
-                check: '',
+                run: 0,
+                check: 0,
                 details: '',
-                allCnt: '',
-                failCnt: ''
+                allCnt: 0,
+                failCnt: 0
               },
               coverage: {
-                check: '',
+                run: 0,
+                check: 0,
                 details: '',
-                total: ''
+                total: 0
               }
             },
-            build: {
-              check: '',
+            gobuild: {
+              run: 0,
+              check: 0,
               details: ''
             },
             deploy: {
               dockerBuild: {
-                run: '',
-                check: '',
+                run: 0,
+                check: 0,
                 details: ''
               },
               publish: {
-                run: '',
-                check: '',
+                run: 0,
+                check: 0,
                 details: ''                
               }
             },
             selfhost: {
-              check: '',
+              run: 0,
+              check: 0,
               details: ''
-            },            
+            }
           },
           tabIndex: 0
         },        
@@ -352,12 +546,12 @@
           let urlParams = new URLSearchParams(window.location.search);
           this.infoPath = urlParams.get('info');
           console.log('infoPath', this.infoPath);
-
+          
           this.coveragePath = '';
           if(this.infoPath != null) {
             this.coveragePath = this.infoPath.replace(".json", ".html");
             console.log('coveragePath', this.coveragePath);
-            
+
             let result = await axios.get(this.infoPath);
             this.report = result.data;
             console.log('report', this.report);
