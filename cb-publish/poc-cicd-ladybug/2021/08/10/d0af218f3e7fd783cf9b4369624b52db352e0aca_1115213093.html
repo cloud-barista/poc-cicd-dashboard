@@ -1,0 +1,3234 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>common: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">github.com/cloud-barista/poc-cicd-ladybug/src/core/common/common.go (100.0%)</option>
+				
+				<option value="file1">github.com/cloud-barista/poc-cicd-ladybug/src/core/common/ns.go (0.0%)</option>
+				
+				<option value="file2">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/cluster.go (0.0%)</option>
+				
+				<option value="file3">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/node.go (0.0%)</option>
+				
+				<option value="file4">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/spider/base.go (0.0%)</option>
+				
+				<option value="file5">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/spider/connection.go (0.0%)</option>
+				
+				<option value="file6">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/spider/region.go (0.0%)</option>
+				
+				<option value="file7">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/status.go (0.0%)</option>
+				
+				<option value="file8">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/base.go (0.0%)</option>
+				
+				<option value="file9">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/firewall.go (0.0%)</option>
+				
+				<option value="file10">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/image.go (0.0%)</option>
+				
+				<option value="file11">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/mcis.go (0.0%)</option>
+				
+				<option value="file12">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/ns.go (0.0%)</option>
+				
+				<option value="file13">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/spec.go (0.0%)</option>
+				
+				<option value="file14">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/sshkey.go (0.0%)</option>
+				
+				<option value="file15">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/tvm.go (0.0%)</option>
+				
+				<option value="file16">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug/vpc.go (0.0%)</option>
+				
+				<option value="file17">github.com/cloud-barista/poc-cicd-ladybug/src/core/model/vm.go (0.0%)</option>
+				
+				<option value="file18">github.com/cloud-barista/poc-cicd-ladybug/src/core/service/cluster.go (0.0%)</option>
+				
+				<option value="file19">github.com/cloud-barista/poc-cicd-ladybug/src/core/service/common.go (0.0%)</option>
+				
+				<option value="file20">github.com/cloud-barista/poc-cicd-ladybug/src/core/service/csp.go (0.0%)</option>
+				
+				<option value="file21">github.com/cloud-barista/poc-cicd-ladybug/src/core/service/mcir.go (0.0%)</option>
+				
+				<option value="file22">github.com/cloud-barista/poc-cicd-ladybug/src/core/service/node.go (0.0%)</option>
+				
+				<option value="file23">github.com/cloud-barista/poc-cicd-ladybug/src/rest-api/router/cluster.go (0.0%)</option>
+				
+				<option value="file24">github.com/cloud-barista/poc-cicd-ladybug/src/rest-api/router/healthy.go (100.0%)</option>
+				
+				<option value="file25">github.com/cloud-barista/poc-cicd-ladybug/src/rest-api/router/node.go (0.0%)</option>
+				
+				<option value="file26">github.com/cloud-barista/poc-cicd-ladybug/src/utils/app/ack.go (0.0%)</option>
+				
+				<option value="file27">github.com/cloud-barista/poc-cicd-ladybug/src/utils/app/client.go (0.0%)</option>
+				
+				<option value="file28">github.com/cloud-barista/poc-cicd-ladybug/src/utils/config/config.go (0.0%)</option>
+				
+				<option value="file29">github.com/cloud-barista/poc-cicd-ladybug/src/utils/lang/functions.go (7.5%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package common
+
+import (
+        cbstore "github.com/cloud-barista/cb-store"
+        icbs "github.com/cloud-barista/cb-store/interfaces"
+)
+
+var CBStore icbs.Store
+
+func init() <span class="cov8" title="1">{
+        // cblog is a global variable.
+        CBStore = cbstore.GetStore()
+}</span>
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package common
+
+import (
+        "net/http"
+
+        "github.com/labstack/echo/v4"
+)
+
+func NsValidate() echo.MiddlewareFunc <span class="cov0" title="0">{
+        return func(next echo.HandlerFunc) echo.HandlerFunc </span><span class="cov0" title="0">{
+                return func(c echo.Context) error </span><span class="cov0" title="0">{
+                        ns := c.Param("namespace")
+                        if ns == "" </span><span class="cov0" title="0">{
+                                return echo.NewHTTPError(http.StatusUnauthorized, "Namespace cannot be empty")
+                        }</span>
+                        <span class="cov0" title="0">return next(c)</span>
+                }
+        }
+}
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package model
+
+import (
+        "encoding/json"
+        "errors"
+        "fmt"
+        "strings"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/common"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/lang"
+)
+
+const (
+        STATUS_CREATED      = "created"
+        STATUS_PROVISIONING = "provisioning"
+        STATUS_COMPLETED    = "completed"
+        STATUS_FAILED       = "failed"
+)
+
+type Cluster struct {
+        Model
+        Status        string `json:"status"`
+        UId           string `json:"uid"`
+        MCIS          string `json:"mcis"`
+        Namespace     string `json:"namespace"`
+        ClusterConfig string `json:"clusterConfig"`
+        CpLeader      string `json:"cpLeader"`
+        NetworkCni    string `json:"networkCni"`
+        Nodes         []Node `json:"nodes"`
+}
+
+type ClusterList struct {
+        ListModel
+        namespace string
+        Items     []Cluster `json:"items"`
+}
+
+func NewCluster(namespace string, name string) *Cluster <span class="cov0" title="0">{
+        return &amp;Cluster{
+                Model:     Model{Kind: KIND_CLUSTER, Name: name},
+                Namespace: namespace,
+                Nodes:     []Node{},
+        }
+}</span>
+
+func NewClusterList(namespace string) *ClusterList <span class="cov0" title="0">{
+        return &amp;ClusterList{
+                ListModel: ListModel{Kind: KIND_CLUSTER_LIST},
+                namespace: namespace,
+                Items:     []Cluster{},
+        }
+}</span>
+
+func (self *Cluster) Insert() error <span class="cov0" title="0">{
+        self.Status = STATUS_CREATED
+        return self.putStore()
+}</span>
+
+func (self *Cluster) Update() error <span class="cov0" title="0">{
+        self.Status = STATUS_PROVISIONING
+        return self.putStore()
+}</span>
+
+func (self *Cluster) Complete() error <span class="cov0" title="0">{
+        self.Status = STATUS_COMPLETED
+        return self.putStore()
+}</span>
+
+func (self *Cluster) Fail() error <span class="cov0" title="0">{
+        self.Status = STATUS_FAILED
+        return self.putStore()
+}</span>
+
+func (self *Cluster) putStore() error <span class="cov0" title="0">{
+        key := lang.GetStoreClusterKey(self.Namespace, self.Name)
+        value, _ := json.Marshal(self)
+        err := common.CBStore.Put(key, string(value))
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *Cluster) Select() error <span class="cov0" title="0">{
+        key := lang.GetStoreClusterKey(self.Namespace, self.Name)
+        keyValue, err := common.CBStore.Get(key)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if keyValue == nil </span><span class="cov0" title="0">{
+                return errors.New(fmt.Sprintf("%s not found", key))
+        }</span>
+        <span class="cov0" title="0">json.Unmarshal([]byte(keyValue.Value), &amp;self)
+
+        err = getClusterNodes(self)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *Cluster) Delete() error <span class="cov0" title="0">{
+        // delete node
+        keyValues, err := common.CBStore.GetList(lang.GetStoreNodeKey(self.Namespace, self.Name, ""), true)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">for _, keyValue := range keyValues </span><span class="cov0" title="0">{
+                err = common.CBStore.Delete(keyValue.Key)
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        }
+
+        // delete cluster
+        <span class="cov0" title="0">key := lang.GetStoreClusterKey(self.Namespace, self.Name)
+        err = common.CBStore.Delete(key)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *ClusterList) SelectList() error <span class="cov0" title="0">{
+        keyValues, err := common.CBStore.GetList(lang.GetStoreClusterKey(self.namespace, ""), true)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">self.Items = []Cluster{}
+        for _, keyValue := range keyValues </span><span class="cov0" title="0">{
+                if !strings.Contains(keyValue.Key, "/nodes") </span><span class="cov0" title="0">{
+                        cluster := &amp;Cluster{}
+                        json.Unmarshal([]byte(keyValue.Value), &amp;cluster)
+
+                        err = getClusterNodes(cluster)
+                        if err != nil </span><span class="cov0" title="0">{
+                                return err
+                        }</span>
+                        <span class="cov0" title="0">self.Items = append(self.Items, *cluster)</span>
+                }
+        }
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func getClusterNodes(cluster *Cluster) error <span class="cov0" title="0">{
+        nodeKeyValues, err := common.CBStore.GetList(lang.GetStoreNodeKey(cluster.Namespace, cluster.Name, ""), true)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">for _, nodeKeyValue := range nodeKeyValues </span><span class="cov0" title="0">{
+                node := &amp;Node{}
+                json.Unmarshal([]byte(nodeKeyValue.Value), &amp;node)
+                cluster.Nodes = append(cluster.Nodes, *node)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package model
+
+import (
+        "encoding/json"
+        "errors"
+        "fmt"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/common"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/lang"
+)
+
+type Node struct {
+        Model
+        namespace   string
+        clusterName string
+        Credential  string     `json:"credential"`
+        PublicIP    string     `json:"publicIp"`
+        UId         string     `json:"uid"`
+        Role        string     `json:"role"`
+        Spec        string     `json:"spec"`
+        Csp         config.CSP `json:"csp"`
+}
+
+type NodeList struct {
+        ListModel
+        namespace   string
+        clusterName string
+        Items       []Node `json:"items"`
+}
+
+func NewNodeVM(namespace string, clusterName string, vm VM) *Node <span class="cov0" title="0">{
+        return &amp;Node{
+                Model:       Model{Kind: KIND_NODE, Name: vm.Name},
+                Credential:  vm.Credential,
+                PublicIP:    vm.PublicIP,
+                Role:        vm.Role,
+                Spec:        vm.Spec,
+                Csp:         vm.Csp,
+                namespace:   namespace,
+                clusterName: clusterName,
+        }
+}</span>
+
+func NewNode(namespace string, clusterName string, nodeName string) *Node <span class="cov0" title="0">{
+        return &amp;Node{
+                Model:       Model{Kind: KIND_NODE, Name: nodeName},
+                namespace:   namespace,
+                clusterName: clusterName,
+        }
+}</span>
+
+func NewNodeList(namespace string, clusterName string) *NodeList <span class="cov0" title="0">{
+        return &amp;NodeList{
+                ListModel:   ListModel{Kind: KIND_NODE_LIST},
+                Items:       []Node{},
+                namespace:   namespace,
+                clusterName: clusterName,
+        }
+}</span>
+
+func (self *Node) Select() error <span class="cov0" title="0">{
+        key := lang.GetStoreNodeKey(self.namespace, self.clusterName, self.Name)
+        keyValue, err := common.CBStore.Get(key)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if keyValue == nil </span><span class="cov0" title="0">{
+                return errors.New(fmt.Sprintf("%s not found", key))
+        }</span>
+
+        <span class="cov0" title="0">json.Unmarshal([]byte(keyValue.Value), &amp;self)
+        return nil</span>
+}
+
+func (self *Node) Insert() error <span class="cov0" title="0">{
+        key := lang.GetStoreNodeKey(self.namespace, self.clusterName, self.Name)
+        value, _ := json.Marshal(self)
+        err := common.CBStore.Put(key, string(value))
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *Node) Delete() error <span class="cov0" title="0">{
+        key := lang.GetStoreNodeKey(self.namespace, self.clusterName, self.Name)
+        err := common.CBStore.Delete(key)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *NodeList) SelectList() error <span class="cov0" title="0">{
+        keyValues, err := common.CBStore.GetList(lang.GetStoreNodeKey(self.namespace, self.clusterName, ""), true)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">for _, keyValue := range keyValues </span><span class="cov0" title="0">{
+                node := &amp;Node{}
+                json.Unmarshal([]byte(keyValue.Value), &amp;node)
+                self.Items = append(self.Items, *node)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package spider
+
+import (
+        "encoding/json"
+        "errors"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/go-resty/resty/v2"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+type Model struct {
+}
+
+// 결과 처리
+func (m *Model) response(resp *resty.Response, err error) error <span class="cov0" title="0">{
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if resp.StatusCode() &gt; 300 &amp;&amp; resp.StatusCode() != http.StatusNotFound </span><span class="cov0" title="0">{
+                logger.Warnf("Spider : statusCode=%d, url=%s, body=%s", resp.StatusCode(), resp.Request.URL, resp)
+                status := model.Status{}
+                json.Unmarshal(resp.Body(), &amp;status)
+                return errors.New(status.Message)
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package spider
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/app"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        logger "github.com/sirupsen/logrus"
+)
+
+// connection config
+type Connection struct {
+        Model
+        ConfigName     string `json:"ConfigName"`
+        ProviderName   string `json:"ProviderName"`
+        DriverName     string `json:"DriverName"`
+        CredentialName string `json:"CredentialName"`
+        RegionName     string `json:"RegionName"`
+}
+
+func NewConnection(name string) *Connection <span class="cov0" title="0">{
+        return &amp;Connection{
+                Model:      Model{},
+                ConfigName: name,
+        }
+}</span>
+
+// get connection config
+func (self *Connection) GET() (bool, error) <span class="cov0" title="0">{
+
+        url := fmt.Sprintf("%s/connectionconfig/%s", *config.Config.SpiderUrl, self.ConfigName)
+        resp, err := app.ExecutHTTP(http.MethodGet, url, nil, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+        <span class="cov0" title="0">if err = self.response(resp, err); err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+        <span class="cov0" title="0">if resp.StatusCode() == http.StatusNotFound </span><span class="cov0" title="0">{
+                logger.Infof("Not found data (status=404, method=%s, url=%s)", http.MethodGet, url)
+                return false, nil
+        }</span>
+
+        <span class="cov0" title="0">return true, nil</span>
+
+}
+</pre>
+		
+		<pre class="file" id="file6" style="display: none">package spider
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/app"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        logger "github.com/sirupsen/logrus"
+)
+
+type Region struct {
+        Model
+        RegionName       string     `json:"RegionName"`
+        ProviderName     string     `json:"ProviderName"`
+        KeyValueInfoList []KeyValue `json:"KeyValueInfoList"`
+}
+
+type KeyValue struct {
+        Key   string
+        Value string
+}
+
+func NewRegion(name string) *Region <span class="cov0" title="0">{
+        return &amp;Region{
+                Model:      Model{},
+                RegionName: name,
+        }
+}</span>
+
+// get region
+func (self *Region) GET() (bool, error) <span class="cov0" title="0">{
+
+        url := fmt.Sprintf("%s/region/%s", *config.Config.SpiderUrl, self.RegionName)
+        resp, err := app.ExecutHTTP(http.MethodGet, url, nil, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+        <span class="cov0" title="0">if resp.StatusCode() == http.StatusNotFound </span><span class="cov0" title="0">{
+                logger.Warnf("Not found data (status=404, method=%s, url=%s)", http.MethodGet, url)
+                return false, nil
+        }</span>
+
+        <span class="cov0" title="0">return true, nil</span>
+
+}
+</pre>
+		
+		<pre class="file" id="file7" style="display: none">package model
+
+const (
+        STATUS_UNKNOWN   = 0
+        STATUS_SUCCESS   = 1
+        STATUS_NOT_EXIST = 404
+        // STATUS_OK        = 200
+        // STATUS_FAIL      = 500
+)
+
+type Status struct {
+        Kind    string `json:"kind"`
+        Code    int    `json:"code"`
+        Message string `json:"message"`
+}
+
+func NewStatus() *Status <span class="cov0" title="0">{
+        return &amp;Status{
+                Kind: KIND_STATUS,
+        }
+}</span>
+</pre>
+		
+		<pre class="file" id="file8" style="display: none">package tumblebug
+
+import (
+        "encoding/json"
+        "errors"
+        "fmt"
+        "net/http"
+
+        "github.com/beego/beego/v2/core/validation"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/app"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        "github.com/go-resty/resty/v2"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+type KeyValue struct {
+        Key   string
+        Value string
+}
+
+type Model struct {
+        Name      string `json:"name"`
+        namespace string
+}
+
+func (self *Model) execute(method string, url string, body interface{}, result interface{}) (bool, error) <span class="cov0" title="0">{
+
+        // validation
+        if err := self.validate(validation.Validation{}); err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+
+        <span class="cov0" title="0">resp, err := app.ExecutHTTP(method, *config.Config.TumblebugUrl+url, body, result)
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+
+        // response check
+        <span class="cov0" title="0">if resp.StatusCode() &gt; 300 &amp;&amp; resp.StatusCode() != http.StatusNotFound </span><span class="cov0" title="0">{
+                logger.Warnf("Tumblebug : statusCode=%d, url=%s, body=%s", resp.StatusCode(), resp.Request.URL, resp)
+                status := model.Status{}
+                json.Unmarshal(resp.Body(), &amp;status)
+                // message &gt; message 로 리턴되는 경우가 있어서 한번더 unmarshal 작업
+                if json.Valid([]byte(status.Message)) </span><span class="cov0" title="0">{
+                        json.Unmarshal([]byte(status.Message), &amp;status)
+                }</span>
+                <span class="cov0" title="0">return false, errors.New(status.Message)</span>
+        }
+
+        <span class="cov0" title="0">if method == http.MethodGet &amp;&amp; resp.StatusCode() == http.StatusNotFound </span><span class="cov0" title="0">{
+                logger.Infof("Not found data (status=404, method=%s, url=%s)", method, url)
+                return false, nil
+        }</span>
+
+        <span class="cov0" title="0">return true, nil</span>
+
+}
+
+// // 결과 처리
+// func (self *Model) response(resp *resty.Response, err error) error {
+//         if err != nil {
+//                 return err
+//         }
+//         if resp.StatusCode() &gt; 300 &amp;&amp; resp.StatusCode() != http.StatusNotFound {
+//                 logger.Warnf("statusCode=%d, url=%s, body=%s", resp.StatusCode(), resp.Request.URL, resp)
+//                 status := model.Status{}
+//                 json.Unmarshal(resp.Body(), &amp;status)
+//                 // message &gt; message 로 리턴되는 경우가 있어서 한번더 unmarshal 작업
+//                 if json.Valid([]byte(status.Message)) {
+//                         json.Unmarshal([]byte(status.Message), &amp;status)
+//                 }
+//                 return errors.New(status.Message)
+
+//         }
+//         return nil
+// }
+
+func (self *Model) validate(valid validation.Validation) error <span class="cov0" title="0">{
+        valid.Required(self.namespace, "namespace")
+        valid.Required(self.Name, "name")
+        if valid.HasErrors() </span><span class="cov0" title="0">{
+                for _, err := range valid.Errors </span><span class="cov0" title="0">{
+                        return errors.New(fmt.Sprintf("[%s]%s", err.Key, err.Error()))
+                }</span>
+        }
+        <span class="cov0" title="0">return nil</span>
+}
+
+// status :200 , body = {message: "Cannot find ..." }  형태의 response 에러처리
+func (self *Model) hasResponseMessage(resp *resty.Response) error <span class="cov0" title="0">{
+        var d map[string]interface{}
+        json.Unmarshal(resp.Body(), &amp;d)
+        if d["message"] != nil </span><span class="cov0" title="0">{
+                return errors.New(fmt.Sprintf("%s", d["message"]))
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file9" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        logger "github.com/sirupsen/logrus"
+)
+
+type Firewall struct {
+        Model
+        Config               string          `json:"connectionName"`
+        VPCId                string          `json:"vNetId"`
+        Description          string          `json:"description"`
+        FirewallRules        []FirewallRules `json:"firewallRules"`
+        CspSecurityGroupId   string          `json:"cspSecurityGroupId"`   // output
+        CspSecurityGroupName string          `json:"cspSecurityGroupName"` // output
+        KeyValueList         []KeyValue      `json:"keyValueList"`         // output
+}
+
+type FirewallRules struct {
+        From      string `json:"fromPort"`
+        To        string `json:"toPort"`
+        Protocol  string `json:"ipProtocol"`
+        Direction string `json:"direction"`
+}
+
+func NewFirewall(ns string, name string, conf string) *Firewall <span class="cov0" title="0">{
+        return &amp;Firewall{
+                Model:  Model{Name: name, namespace: ns},
+                Config: conf,
+                FirewallRules: []FirewallRules{
+                        {Protocol: "tcp", Direction: "inbound", From: "1", To: "65535"},
+                        {Protocol: "udp", Direction: "inbound", From: "1", To: "65535"},
+                        {Protocol: "icmp", Direction: "inbound", From: "-1", To: "-1"},
+                },
+        }
+}</span>
+
+func (self *Firewall) GET() (bool, error) <span class="cov0" title="0">{
+
+        return self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/resources/securityGroup/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), &amp;self)
+
+}</span>
+
+func (self *Firewall) POST() error <span class="cov0" title="0">{
+
+        _, err := self.execute(http.MethodPost, fmt.Sprintf("/ns/%s/resources/securityGroup", self.namespace), self, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *Firewall) DELETE(ns string) error <span class="cov0" title="0">{
+
+        exist, err := self.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                _, err := self.execute(http.MethodDelete, fmt.Sprintf("/ns/%s/resources/securityGroup/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), model.Status{})
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete firewall skip (name=%s, cause=not found)", self.Name)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file10" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        logger "github.com/sirupsen/logrus"
+)
+
+type Image struct {
+        Model
+        Config       string     `json:"connectionName"`
+        CspImageId   string     `json:"cspImageId"`
+        CspImageName string     `json:"cspImageName"` // output
+        CreationDate string     `json:"creationDate"` // output
+        Description  string     `json:"description"`  //
+        GuestOS      string     `json:"guestOS"`      //
+        Status       string     `json:"status"`       // output
+        KeyValueList []KeyValue `json:"keyValueList"` // output
+}
+
+func NewImage(ns string, name string, conf string) *Image <span class="cov0" title="0">{
+        return &amp;Image{
+                Model:        Model{Name: name, namespace: ns},
+                Config:       conf,
+                CspImageName: "Ubuntu, 18.04",
+                Description:  "Canonical, Ubuntu, 18.04 LTS, amd64 bionic",
+                GuestOS:      "ubuntu",
+                KeyValueList: []KeyValue{},
+        }
+}</span>
+
+func (self *Image) GET() (bool, error) <span class="cov0" title="0">{
+
+        return self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/resources/image/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), &amp;self)
+}</span>
+
+func (self *Image) POST() error <span class="cov0" title="0">{
+
+        _, err := self.execute(http.MethodPost, fmt.Sprintf("/ns/%s/resources/image?action=registerWithInfo", self.namespace), self, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *Image) DELETE(ns string) error <span class="cov0" title="0">{
+
+        exist, err := self.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                _, err := self.execute(http.MethodDelete, fmt.Sprintf("/ns/%s/resources/image/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), model.Status{})
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete image skip (name=%s, cause=not found)", self.Name)
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file11" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+type MCIS struct {
+        Model
+        Description string     `json:"description"`
+        VMs         []model.VM `json:"vm"` // output
+}
+
+func NewMCIS(ns string, name string) *MCIS <span class="cov0" title="0">{
+        return &amp;MCIS{
+                Model: Model{Name: name, namespace: ns},
+                VMs:   []model.VM{},
+        }
+}</span>
+
+func (self *MCIS) GET() (bool, error) <span class="cov0" title="0">{
+
+        return self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/mcis/%s", self.namespace, self.Name), nil, &amp;self)
+
+        // if err = self.hasResponseMessage(resp); err != nil {
+        //         // 이부분은 향후 tumblebug 에서 수정해야 할듯
+        //         if strings.HasPrefix(err.Error(), "Cannot find") {
+        //                 return false, nil
+        //         } else {
+        //                 return false, err
+        //         }
+        // }
+}</span>
+
+func (self *MCIS) POST() error <span class="cov0" title="0">{
+
+        _, err := self.execute(http.MethodPost, fmt.Sprintf("/ns/%s/mcis", self.namespace), self, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *MCIS) DELETE() error <span class="cov0" title="0">{
+
+        exist, err := self.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                _, err := self.execute(http.MethodDelete, fmt.Sprintf("/ns/%s/mcis/%s", self.namespace, self.Name), nil, model.Status{})
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete MCIS skip (name=%s, cause=not found)", self.Name)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *MCIS) TERMINATE() error <span class="cov0" title="0">{
+        _, err := self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/mcis/%s?action=terminate", self.namespace, self.Name), nil, model.Status{})
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *MCIS) REFINE() error <span class="cov0" title="0">{
+        _, err := self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/mcis/%s?action=refine", self.namespace, self.Name), nil, model.Status{})
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file12" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/app"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+)
+
+type NS struct {
+        ID          string `json:"id"`
+        Name        string `json:"name"`
+        Description string `json:"description"`
+}
+
+func NewNS(ns string) *NS <span class="cov0" title="0">{
+        return &amp;NS{
+                Name: ns,
+                ID:   ns,
+        }
+}</span>
+
+func (self *NS) GET() (bool, error) <span class="cov0" title="0">{
+
+        resp, err := app.ExecutHTTP(http.MethodGet, fmt.Sprintf("%s/ns/%s", *config.Config.TumblebugUrl, self.Name), nil, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return false, err
+        }</span>
+        <span class="cov0" title="0">if resp.StatusCode() == http.StatusNotFound </span><span class="cov0" title="0">{
+                return false, nil
+        }</span>
+
+        <span class="cov0" title="0">return true, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file13" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/beego/beego/v2/core/validation"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+type Spec struct {
+        Model
+        Config      string `json:"connectionName"`
+        CspSpecName string `json:"cspSpecName"`
+}
+
+func NewSpec(ns string, name string, conf string) *Spec <span class="cov0" title="0">{
+        return &amp;Spec{
+                Model:  Model{Name: name, namespace: ns},
+                Config: conf,
+        }
+}</span>
+
+func (self *Spec) GET() (bool, error) <span class="cov0" title="0">{
+
+        return self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/resources/spec/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), &amp;self)
+
+}</span>
+
+func (self *Spec) POST() error <span class="cov0" title="0">{
+
+        // validation
+        valid := validation.Validation{}
+        valid.Required(self.CspSpecName, "cspSpecName")
+        if err := self.validate(valid); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">_, err := self.execute(http.MethodPost, fmt.Sprintf("/ns/%s/resources/spec", self.namespace), self, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+
+}
+
+func (self *Spec) DELETE(ns string) error <span class="cov0" title="0">{
+
+        exist, err := self.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                _, err := self.execute(http.MethodDelete, fmt.Sprintf("/ns/%s/resources/spec/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), model.Status{})
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete spec skip.. (name=%s, cause=not found)", self.Name)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file14" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/beego/beego/v2/core/validation"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+type SSHKey struct {
+        Model
+        Config     string `json:"connectionName"`
+        Username   string `json:"username"`
+        PrivateKey string `json:"privateKey"` // output
+}
+
+func NewSSHKey(ns string, name string, conf string) *SSHKey <span class="cov0" title="0">{
+        return &amp;SSHKey{
+                Model:  Model{Name: name, namespace: ns},
+                Config: conf,
+        }
+}</span>
+
+func (self *SSHKey) GET() (bool, error) <span class="cov0" title="0">{
+
+        return self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/resources/sshKey/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), &amp;self)
+
+}</span>
+
+func (self *SSHKey) POST() error <span class="cov0" title="0">{
+        // validation
+        valid := validation.Validation{}
+        valid.Required(self.Username, "username")
+        if err := self.validate(valid); err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">_, err := self.execute(http.MethodPost, fmt.Sprintf("/ns/%s/resources/sshKey", self.namespace), self, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+
+}
+
+func (self *SSHKey) DELETE(ns string) error <span class="cov0" title="0">{
+
+        exist, err := self.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                _, err := self.execute(http.MethodDelete, fmt.Sprintf("/ns/%s/resources/sshKey/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), model.Status{})
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete sshkey skip (name=%s, cause=not found)", self.Name)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file15" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+type TVM struct {
+        Model
+        VM model.VM
+}
+
+func NewTVm(ns string, mcisName string) *TVM <span class="cov0" title="0">{
+        return &amp;TVM{
+                Model: Model{namespace: ns, Name: mcisName},
+        }
+}</span>
+
+func (self *TVM) GET() (bool, error) <span class="cov0" title="0">{
+
+        return self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/mcis/%s/vm/%s", self.namespace, self.Name, self.VM.Name), nil, &amp;self.VM)
+
+}</span>
+
+func (self *TVM) POST() error <span class="cov0" title="0">{
+
+        _, err := self.execute(http.MethodPost, fmt.Sprintf("/ns/%s/mcis/%s/vm", self.namespace, self.Name), self.VM, &amp;self.VM)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+
+}
+
+func (self *TVM) DELETE() error <span class="cov0" title="0">{
+
+        exist, err := self.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                _, err := self.execute(http.MethodDelete, fmt.Sprintf("/ns/%s/mcis/%s/vm/%s", self.namespace, self.Name, self.VM.Name), nil, model.Status{})
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete VM skip (name=%s, cause=not found)", self.VM.Name)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file16" style="display: none">package tumblebug
+
+import (
+        "fmt"
+        "net/http"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        logger "github.com/sirupsen/logrus"
+)
+
+type VPC struct {
+        Model
+        Config       string     `json:"connectionName"`
+        CidrBlock    string     `json:"cidrBlock"`
+        Subnets      []Subnet   `json:"subnetInfoList"`
+        Description  string     `json:"description"`
+        CspVNetId    string     `json:"cspVNetId"`    // output
+        CspVNetName  string     `json:"cspVNetName"`  // output
+        Status       string     `json:"status"`       // output
+        KeyValueList []KeyValue `json:"keyValueList"` // output
+}
+
+type Subnet struct {
+        Name      string `json:"Name"`
+        CidrBlock string `json:"IPv4_CIDR"`
+}
+
+func NewVPC(ns string, name string, conf string) *VPC <span class="cov0" title="0">{
+        return &amp;VPC{
+                Model:     Model{Name: name, namespace: ns},
+                Config:    conf,
+                CidrBlock: "192.168.0.0/16",
+                Subnets: []Subnet{
+                        {
+                                Name:      fmt.Sprintf("%s-subnet", name),
+                                CidrBlock: "192.168.1.0/24"},
+                },
+        }
+}</span>
+
+func (self *VPC) GET() (bool, error) <span class="cov0" title="0">{
+
+        return self.execute(http.MethodGet, fmt.Sprintf("/ns/%s/resources/vNet/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), &amp;self)
+
+}</span>
+
+func (self *VPC) POST() error <span class="cov0" title="0">{
+
+        _, err := self.execute(http.MethodPost, fmt.Sprintf("/ns/%s/resources/vNet", self.namespace), self, &amp;self)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+
+}
+
+func (self *VPC) DELETE() error <span class="cov0" title="0">{
+
+        exist, err := self.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                _, err := self.execute(http.MethodDelete, fmt.Sprintf("/ns/%s/resources/vNet/%s", self.namespace, self.Name), fmt.Sprintf(`{"connectionName" : "%s"}`, self.Config), model.Status{})
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete vpc skip.. (name=%s, cause=not found)", self.Name)
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file17" style="display: none">package model
+
+import (
+        "errors"
+        "fmt"
+        "regexp"
+        "strings"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        ssh "github.com/cloud-barista/cb-spider/cloud-control-manager/vm-ssh"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+type VM struct {
+        Name         string     `json:"name"`
+        Config       string     `json:"connectionName"`
+        VPC          string     `json:"vNetId"`
+        Subnet       string     `json:"subnetId"`
+        Firewall     []string   `json:"securityGroupIds"`
+        SSHKey       string     `json:"sshKeyId"`
+        Image        string     `json:"imageId"`
+        Spec         string     `json:"specId"`
+        UserAccount  string     `json:"vmUserAccount"`
+        UserPassword string     `json:"vmUserPassword"`
+        Description  string     `json:"description"`
+        PublicIP     string     `json:"publicIP"`  // output
+        PrivateIP    string     `json:"privateIP"` // output
+        Credential   string     // private
+        Role         string     `json:"role"`
+        Csp          config.CSP `json:"csp"`
+        IsCPLeader   bool       `json:"isCPLeader"`
+}
+
+type VMInfo struct {
+        Name       string     `json:"name"`
+        Credential string     // private
+        Role       string     `json:"role"`
+        Csp        config.CSP `json:"csp"`
+        IsCPLeader bool       `json:"isCPLeader"`
+}
+
+const (
+        remoteTargetPath = "/tmp"
+)
+
+func (self *VM) ConnectionTest(sshInfo *ssh.SSHInfo) error <span class="cov0" title="0">{
+        cmd := "/bin/hostname"
+        _, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Warnf("connection test error (server=%s, cause=%s)", sshInfo.ServerPort, err)
+                return err
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *VM) CopyScripts(sshInfo *ssh.SSHInfo, networkCni string) error <span class="cov0" title="0">{
+        sourcePath := fmt.Sprintf("%s/src/scripts", *config.Config.AppRootPath)
+        sourceFile := []string{config.BOOTSTRAP_FILE}
+        if self.Role == config.CONTROL_PLANE &amp;&amp; self.IsCPLeader </span><span class="cov0" title="0">{
+                sourceFile = append(sourceFile, config.INIT_FILE)
+                sourceFile = append(sourceFile, config.HA_PROXY_FILE)
+        }</span>
+        <span class="cov0" title="0">if networkCni == config.NETWORKCNI_CANAL </span><span class="cov0" title="0">{
+                sourceFile = append(sourceFile, config.LADYBUG_BOOTSTRAP_CANAL_FILE)
+        }</span> else<span class="cov0" title="0"> {
+                sourceFile = append(sourceFile, config.LADYBUG_BOOTSTRAP_KILO_FILE)
+        }</span>
+        <span class="cov0" title="0">sourceFile = append(sourceFile, config.SYSTEMD_SERVICE_FILE)
+
+        logger.Infof("start script file copy (vm=%s, src=%s, dest=%s)\n", self.Name, sourcePath, remoteTargetPath)
+        for _, f := range sourceFile </span><span class="cov0" title="0">{
+                src := fmt.Sprintf("%s/%s", sourcePath, f)
+                dest := fmt.Sprintf("%s/%s", remoteTargetPath, f)
+                if err := ssh.SSHCopy(*sshInfo, src, dest); err != nil </span><span class="cov0" title="0">{
+                        return errors.New(fmt.Sprintf("copy scripts error (server=%s, cause=%s)", sshInfo.ServerPort, err))
+                }</span>
+        }
+        <span class="cov0" title="0">logger.Infof("end script file copy (vm=%s, server=%s)\n", self.Name, sshInfo.ServerPort)
+        return nil</span>
+}
+
+func (self *VM) SetSystemd(sshInfo *ssh.SSHInfo, networkCni string) error <span class="cov0" title="0">{
+        var bsFile string
+        if networkCni == config.NETWORKCNI_CANAL </span><span class="cov0" title="0">{
+                bsFile = config.LADYBUG_BOOTSTRAP_CANAL_FILE
+        }</span> else<span class="cov0" title="0"> {
+                bsFile = config.LADYBUG_BOOTSTRAP_KILO_FILE
+        }</span>
+
+        <span class="cov0" title="0">cmd := fmt.Sprintf("cd %s;./%s", remoteTargetPath, bsFile)
+        _, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                return errors.New(fmt.Sprintf("create ladybug-bootstrap error (name=%s)", self.Name))
+        }</span>
+
+        <span class="cov0" title="0">cmd = fmt.Sprintf("cd %s;./%s", remoteTargetPath, config.SYSTEMD_SERVICE_FILE)
+        _, err = ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                return errors.New(fmt.Sprintf("set systemd service error (name=%s)", self.Name))
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *VM) Bootstrap(sshInfo *ssh.SSHInfo) error <span class="cov0" title="0">{
+        cmd := fmt.Sprintf("cd %s;./%s", remoteTargetPath, config.BOOTSTRAP_FILE)
+
+        result, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                return errors.New("k8s bootstrap error")
+        }</span>
+        <span class="cov0" title="0">if strings.Contains(result, "kubectl set on hold") </span><span class="cov0" title="0">{
+                return nil
+        }</span> else<span class="cov0" title="0"> {
+                return errors.New(fmt.Sprintf("k8s bootstrap failed (name=%s)", self.Name))
+        }</span>
+}
+
+func (self *VM) InstallHAProxy(sshInfo *ssh.SSHInfo, IPs []string) error <span class="cov0" title="0">{
+        var servers string
+        for i, ip := range IPs </span><span class="cov0" title="0">{
+                servers += fmt.Sprintf("  server  api%d  %s:6443  check", i+1, ip)
+                if i &lt; len(IPs)-1 </span><span class="cov0" title="0">{
+                        servers += "\\n"
+                }</span>
+        }
+        <span class="cov0" title="0">cmd := fmt.Sprintf("sudo sed 's/^{{SERVERS}}/%s/g' %s/%s", servers, remoteTargetPath, config.HA_PROXY_FILE)
+        result, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Warnf("get haproxy command error (name=%s, cause=%v)", self.Name, err)
+                return err
+        }</span>
+        <span class="cov0" title="0">_, err = ssh.SSHRun(*sshInfo, result)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Warnf("install haproxy error (name=%s, cause=%v)", self.Name, err)
+                return err
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *VM) ControlPlaneInit(sshInfo *ssh.SSHInfo, reqKubernetes Kubernetes) ([]string, string, error) <span class="cov0" title="0">{
+        var joinCmd []string
+
+        cmd := fmt.Sprintf("cd %s;./%s %s %s %s", remoteTargetPath, config.INIT_FILE, reqKubernetes.PodCidr, reqKubernetes.ServiceCidr, reqKubernetes.ServiceDnsDomain)
+        cpInitResult, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Warnf("control plane init error (name=%s, cause=%v)", self.Name, err)
+                return nil, "", errors.New("k8s control plane node init error")
+        }</span>
+        <span class="cov0" title="0">if strings.Contains(cpInitResult, "Your Kubernetes control-plane has initialized successfully") </span><span class="cov0" title="0">{
+                joinCmd = getJoinCmd(cpInitResult)
+        }</span> else<span class="cov0" title="0"> {
+                return nil, "", errors.New(fmt.Sprintf("control palne init failed (name=%s)", self.Name))
+        }</span>
+
+        <span class="cov0" title="0">cmd = "sudo cat /etc/kubernetes/admin.conf"
+        clusterConfig, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Errorf("Error while running cmd %s (vm=%s, cause=%v)", cmd, self.Name, err)
+        }</span>
+
+        <span class="cov0" title="0">return joinCmd, clusterConfig, nil</span>
+}
+
+func (self *VM) InstallNetworkCNI(sshInfo *ssh.SSHInfo, networkCni string) error <span class="cov0" title="0">{
+        var cmd string
+        if networkCni == config.NETWORKCNI_CANAL </span><span class="cov0" title="0">{
+                cmd = "sudo kubectl apply -f https://docs.projectcalico.org/manifests/canal.yaml --kubeconfig=/etc/kubernetes/admin.conf"
+        }</span> else<span class="cov0" title="0"> {
+                cmd = `sudo kubectl apply -f https://raw.githubusercontent.com/squat/kilo/main/manifests/crds.yaml --kubeconfig=/etc/kubernetes/admin.conf;
+                sudo kubectl apply -f https://raw.githubusercontent.com/squat/kilo/master/manifests/kilo-kubeadm-flannel.yaml --kubeconfig=/etc/kubernetes/admin.conf;
+                sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml --kubeconfig=/etc/kubernetes/admin.conf;`
+        }</span>
+
+        <span class="cov0" title="0">_, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Warnf("networkCNI install failed (name=%s, cause=%v)", self.Name, err)
+                return errors.New("NetworkCNI Install error")
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func (self *VM) ControlPlaneJoin(sshInfo *ssh.SSHInfo, CPJoinCmd *string) error <span class="cov0" title="0">{
+        if *CPJoinCmd == "" </span><span class="cov0" title="0">{
+                return errors.New("control-plane node join command empty")
+        }</span>
+        <span class="cov0" title="0">cmd := fmt.Sprintf("sudo %s", *CPJoinCmd)
+        result, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Warnf("control-plane join error (name=%s, cause=%v)", self.Name, err)
+                return errors.New("control-plane node join error")
+        }</span>
+
+        <span class="cov0" title="0">if strings.Contains(result, "This node has joined the cluster") </span><span class="cov0" title="0">{
+                _, err = ssh.SSHRun(*sshInfo, "sudo systemctl restart ladybug-bootstrap")
+                if err != nil </span><span class="cov0" title="0">{
+                        logger.Warnf("ladybug-bootstrap restart error (name=%s, cause=%v)", self.Name, err)
+                }</span>
+                <span class="cov0" title="0">return nil</span>
+        } else<span class="cov0" title="0"> {
+                logger.Warnf("control-plane join failed (name=%s)", self.Name)
+                return errors.New(fmt.Sprintf("control-plane join failed (name=%s)", self.Name))
+        }</span>
+}
+
+func (self *VM) WorkerJoin(sshInfo *ssh.SSHInfo, workerJoinCmd *string) error <span class="cov0" title="0">{
+        if *workerJoinCmd == "" </span><span class="cov0" title="0">{
+                return errors.New("worker node join command empty")
+        }</span>
+        <span class="cov0" title="0">cmd := fmt.Sprintf("sudo %s", *workerJoinCmd)
+        result, err := ssh.SSHRun(*sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Warnf("worker join error (name=%s, cause=%v)", self.Name, err)
+                return errors.New(fmt.Sprintf("worker node join error (name=%s)", self.Name))
+        }</span>
+        <span class="cov0" title="0">if strings.Contains(result, "This node has joined the cluster") </span><span class="cov0" title="0">{
+                _, err = ssh.SSHRun(*sshInfo, "sudo systemctl restart ladybug-bootstrap")
+                if err != nil </span><span class="cov0" title="0">{
+                        logger.Warnf("ladybug-bootstrap restart error (name=%s, cause=%v)", self.Name, err)
+                }</span>
+                <span class="cov0" title="0">return nil</span>
+        } else<span class="cov0" title="0"> {
+                logger.Warnf("worker join failed (name=%s)", self.Name)
+                return errors.New(fmt.Sprintf("worker node join failed (name=%s)", self.Name))
+        }</span>
+}
+
+func getJoinCmd(cpInitResult string) []string <span class="cov0" title="0">{
+        var join1, join2, join3 string
+        joinRegex, _ := regexp.Compile("kubeadm\\sjoin\\s(.*?)\\s--token\\s(.*?)\\n")
+        joinRegex2, _ := regexp.Compile("--discovery-token-ca-cert-hash\\ssha256:(.*?)\\n")
+        joinRegex3, _ := regexp.Compile("--control-plane --certificate-key(.*?)\\n")
+
+        if joinRegex.MatchString(cpInitResult) </span><span class="cov0" title="0">{
+                join1 = joinRegex.FindString(cpInitResult)
+        }</span>
+        <span class="cov0" title="0">if joinRegex2.MatchString(cpInitResult) </span><span class="cov0" title="0">{
+                join2 = joinRegex2.FindString(cpInitResult)
+        }</span>
+        <span class="cov0" title="0">if joinRegex3.MatchString(cpInitResult) </span><span class="cov0" title="0">{
+                join3 = joinRegex3.FindString(cpInitResult)
+        }</span>
+
+        <span class="cov0" title="0">return []string{fmt.Sprintf("%s %s %s", join1, join2, join3), fmt.Sprintf("%s %s", join1, join2)}</span>
+}
+</pre>
+		
+		<pre class="file" id="file18" style="display: none">package service
+
+import (
+        "errors"
+        "fmt"
+        "strings"
+        "sync"
+        "time"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/lang"
+        ssh "github.com/cloud-barista/cb-spider/cloud-control-manager/vm-ssh"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+func ListCluster(namespace string) (*model.ClusterList, error) <span class="cov0" title="0">{
+        clusters := model.NewClusterList(namespace)
+
+        err := clusters.SelectList()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov0" title="0">return clusters, nil</span>
+}
+
+func GetCluster(namespace string, clusterName string) (*model.Cluster, error) <span class="cov0" title="0">{
+        cluster := model.NewCluster(namespace, clusterName)
+        err := cluster.Select()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov0" title="0">return cluster, nil</span>
+}
+
+func CreateCluster(namespace string, req *model.ClusterReq) (*model.Cluster, error) <span class="cov0" title="0">{
+        clusterName := req.Name
+        cluster := model.NewCluster(namespace, clusterName)
+        cluster.UId = lang.GetUid()
+        cluster.NetworkCni = req.Config.Kubernetes.NetworkCni
+        mcisName := clusterName
+
+        // Namespace 존재여부 확인
+        ns := tumblebug.NewNS(namespace)
+        exists, err := ns.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return cluster, err
+        }</span>
+        <span class="cov0" title="0">if !exists </span><span class="cov0" title="0">{
+                return cluster, errors.New(fmt.Sprintf("namespace does not exist (name=%s)", namespace))
+        }</span>
+
+        // MCIS 존재여부 확인
+        <span class="cov0" title="0">mcis := tumblebug.NewMCIS(namespace, mcisName)
+        exists, err = mcis.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return cluster, err
+        }</span>
+        <span class="cov0" title="0">if exists </span><span class="cov0" title="0">{
+                return cluster, errors.New("MCIS already exists")
+        }</span>
+
+        <span class="cov0" title="0">var nodeConfigInfos []NodeConfigInfo
+        // control plane
+        cp, err := SetNodeConfigInfos(req.ControlPlane, config.CONTROL_PLANE)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">nodeConfigInfos = append(nodeConfigInfos, cp...)
+
+        // worker
+        wk, err := SetNodeConfigInfos(req.Worker, config.WORKER)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">nodeConfigInfos = append(nodeConfigInfos, wk...)
+
+        cIdx := 0
+        wIdx := 0
+        var nodes []model.Node
+        var vmInfos []model.VMInfo
+
+        for _, nodeConfigInfo := range nodeConfigInfos </span><span class="cov0" title="0">{
+                // MCIR - 존재하면 재활용 없다면 생성 기준
+                // 1. create vpc
+                vpc, err := nodeConfigInfo.CreateVPC(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 2. create firewall
+                <span class="cov0" title="0">fw, err := nodeConfigInfo.CreateFirewall(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 3. create sshKey
+                <span class="cov0" title="0">sshKey, err := nodeConfigInfo.CreateSshKey(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 4. create image
+                <span class="cov0" title="0">image, err := nodeConfigInfo.CreateImage(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 5. create spec
+                <span class="cov0" title="0">spec, err := nodeConfigInfo.CreateSpec(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 6. vm
+                <span class="cov0" title="0">for i := 0; i &lt; nodeConfigInfo.Count; i++ </span><span class="cov0" title="0">{
+                        if nodeConfigInfo.Role == config.CONTROL_PLANE </span><span class="cov0" title="0">{
+                                cIdx++
+                        }</span> else<span class="cov0" title="0"> {
+                                wIdx++
+                        }</span>
+
+                        <span class="cov0" title="0">vm := model.VM{
+                                Config:       nodeConfigInfo.Connection,
+                                VPC:          vpc.Name,
+                                Subnet:       vpc.Subnets[0].Name,
+                                Firewall:     []string{fw.Name},
+                                SSHKey:       sshKey.Name,
+                                Image:        image.Name,
+                                Spec:         spec.Name,
+                                UserAccount:  nodeConfigInfo.Account,
+                                UserPassword: "",
+                                Description:  "",
+                        }
+
+                        vmInfo := model.VMInfo{
+                                Credential: sshKey.PrivateKey,
+                                Role:       nodeConfigInfo.Role,
+                                Csp:        nodeConfigInfo.Csp,
+                        }
+
+                        if nodeConfigInfo.Role == config.CONTROL_PLANE </span><span class="cov0" title="0">{
+                                vm.Name = lang.GetNodeName(clusterName, config.CONTROL_PLANE, cIdx)
+                                if cIdx == 1 </span><span class="cov0" title="0">{
+                                        vmInfo.IsCPLeader = true
+                                        cluster.CpLeader = vm.Name
+                                }</span>
+                        } else<span class="cov0" title="0"> {
+                                vm.Name = lang.GetNodeName(clusterName, config.WORKER, wIdx)
+                        }</span>
+                        <span class="cov0" title="0">vmInfo.Name = vm.Name
+
+                        mcis.VMs = append(mcis.VMs, vm)
+                        vmInfos = append(vmInfos, vmInfo)</span>
+                }
+        }
+
+        // MCIS 생성
+        <span class="cov0" title="0">logger.Infof("start create MCIS (name=%s)", mcisName)
+        if err = mcis.POST(); err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">logger.Infof("create MCIS OK.. (name=%s)", mcisName)
+
+        cpMcis := tumblebug.MCIS{}
+        // 결과값 저장
+        cluster.MCIS = mcisName
+        for _, vm := range mcis.VMs </span><span class="cov0" title="0">{
+                for _, vmInfo := range vmInfos </span><span class="cov0" title="0">{
+                        if vm.Name == vmInfo.Name </span><span class="cov0" title="0">{
+                                vm.Credential = vmInfo.Credential
+                                vm.Role = vmInfo.Role
+                                vm.Csp = vmInfo.Csp
+                                vm.IsCPLeader = vmInfo.IsCPLeader
+
+                                cpMcis.VMs = append(cpMcis.VMs, vm)
+                                break</span>
+                        }
+                }
+
+                <span class="cov0" title="0">node := model.NewNodeVM(namespace, cluster.Name, vm)
+                node.UId = lang.GetUid()
+
+                // insert node in store
+                nodes = append(nodes, *node)
+                err := node.Insert()
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+        }
+
+        <span class="cov0" title="0">err = cluster.Insert()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov0" title="0">var wg sync.WaitGroup
+        c := make(chan error)
+        wg.Add(len(cpMcis.VMs))
+
+        // bootstrap
+        logger.Infoln("start k8s bootstrap")
+
+        time.Sleep(2 * time.Second)
+
+        err = cluster.Update()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov0" title="0">for _, vm := range cpMcis.VMs </span><span class="cov0" title="0">{
+                go func(vm model.VM) </span><span class="cov0" title="0">{
+                        defer wg.Done()
+                        sshInfo := ssh.SSHInfo{
+                                UserName:   GetUserAccount(vm.Csp),
+                                PrivateKey: []byte(vm.Credential),
+                                ServerPort: fmt.Sprintf("%s:22", vm.PublicIP),
+                        }
+                        err = vm.ConnectionTest(&amp;sshInfo)
+                        // retry
+                        if err != nil </span><span class="cov0" title="0">{
+                                vm.ConnectionTest(&amp;sshInfo)
+                        }</span>
+
+                        <span class="cov0" title="0">err := vm.CopyScripts(&amp;sshInfo, cluster.NetworkCni)
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                c &lt;- err
+                        }</span>
+
+                        <span class="cov0" title="0">err = vm.SetSystemd(&amp;sshInfo, cluster.NetworkCni)
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                c &lt;- err
+                        }</span>
+
+                        <span class="cov0" title="0">err = vm.Bootstrap(&amp;sshInfo)
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                c &lt;- err
+                        }</span>
+                }(vm)
+        }
+
+        <span class="cov0" title="0">go func() </span><span class="cov0" title="0">{
+                wg.Wait()
+                close(c)
+                logger.Infoln("end k8s bootstrap")
+        }</span>()
+
+        <span class="cov0" title="0">for err := range c </span><span class="cov0" title="0">{
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+        }
+
+        // init &amp; join
+        <span class="cov0" title="0">var joinCmd []string
+        IPs := GetControlPlaneIPs(cpMcis.VMs)
+
+        logger.Infoln("start k8s init")
+        for _, vm := range cpMcis.VMs </span><span class="cov0" title="0">{
+                if vm.Role == config.CONTROL_PLANE &amp;&amp; vm.IsCPLeader </span><span class="cov0" title="0">{
+                        sshInfo := ssh.SSHInfo{
+                                UserName:   GetUserAccount(vm.Csp),
+                                PrivateKey: []byte(vm.Credential),
+                                ServerPort: fmt.Sprintf("%s:22", vm.PublicIP),
+                        }
+
+                        logger.Infof("install HAProxy (vm=%s)", vm.Name)
+                        err := vm.InstallHAProxy(&amp;sshInfo, IPs)
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                return nil, err
+                        }</span>
+
+                        <span class="cov0" title="0">logger.Infoln("control plane init")
+                        var clusterConfig string
+                        joinCmd, clusterConfig, err = vm.ControlPlaneInit(&amp;sshInfo, req.Config.Kubernetes)
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                return nil, err
+                        }</span>
+                        <span class="cov0" title="0">cluster.ClusterConfig = clusterConfig
+
+                        logger.Infoln("install networkCNI")
+                        err = vm.InstallNetworkCNI(&amp;sshInfo, req.Config.Kubernetes.NetworkCni)
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                return nil, err
+                        }</span>
+                }
+        }
+        <span class="cov0" title="0">logger.Infoln("end k8s init")
+
+        logger.Infoln("start k8s join")
+        for _, vm := range cpMcis.VMs </span><span class="cov0" title="0">{
+                if vm.Role == config.CONTROL_PLANE &amp;&amp; !vm.IsCPLeader </span><span class="cov0" title="0">{
+                        sshInfo := ssh.SSHInfo{
+                                UserName:   GetUserAccount(vm.Csp),
+                                PrivateKey: []byte(vm.Credential),
+                                ServerPort: fmt.Sprintf("%s:22", vm.PublicIP),
+                        }
+                        logger.Infof("control plane join (vm=%s)", vm.Name)
+                        err := vm.ControlPlaneJoin(&amp;sshInfo, &amp;joinCmd[0])
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                return nil, err
+                        }</span>
+                }
+        }
+
+        <span class="cov0" title="0">for _, vm := range cpMcis.VMs </span><span class="cov0" title="0">{
+                if vm.Role == config.WORKER </span><span class="cov0" title="0">{
+                        sshInfo := ssh.SSHInfo{
+                                UserName:   GetUserAccount(vm.Csp),
+                                PrivateKey: []byte(vm.Credential),
+                                ServerPort: fmt.Sprintf("%s:22", vm.PublicIP),
+                        }
+                        logger.Infof("worker join (vm=%s)", vm.Name)
+                        err := vm.WorkerJoin(&amp;sshInfo, &amp;joinCmd[1])
+                        if err != nil </span><span class="cov0" title="0">{
+                                cluster.Fail()
+                                return nil, err
+                        }</span>
+                }
+        }
+        <span class="cov0" title="0">logger.Infoln("end k8s join")
+
+        cluster.Complete()
+        cluster.Nodes = nodes
+
+        return cluster, nil</span>
+}
+
+func DeleteCluster(namespace string, clusterName string) (*model.Status, error) <span class="cov0" title="0">{
+        mcisName := clusterName
+
+        status := model.NewStatus()
+        status.Code = model.STATUS_UNKNOWN
+
+        logger.Infof("start delete Cluster (name=%s)", mcisName)
+        mcis := tumblebug.NewMCIS(namespace, mcisName)
+        cluster := model.NewCluster(namespace, clusterName)
+        exist, err := mcis.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return status, err
+        }</span>
+        <span class="cov0" title="0">if exist </span><span class="cov0" title="0">{
+                logger.Infof("terminate MCIS (name=%s)", mcisName)
+                if err = mcis.TERMINATE(); err != nil </span><span class="cov0" title="0">{
+                        logger.Errorf("terminate mcis error : %v", err)
+                        return status, err
+                }</span>
+                <span class="cov0" title="0">time.Sleep(5 * time.Second)
+
+                logger.Infof("delete MCIS (name=%s)", mcisName)
+                if err = mcis.DELETE(); err != nil </span><span class="cov0" title="0">{
+                        if strings.Contains(err.Error(), "Deletion is not allowed") </span><span class="cov0" title="0">{
+                                logger.Infof("refine mcis (name=%s)", mcisName)
+                                if err = mcis.REFINE(); err != nil </span><span class="cov0" title="0">{
+                                        logger.Errorf("refine MCIS error : %v", err)
+                                        return status, err
+                                }</span>
+                                <span class="cov0" title="0">logger.Infof("delete MCIS (name=%s)", mcisName)
+                                if err = mcis.DELETE(); err != nil </span><span class="cov0" title="0">{
+                                        logger.Errorf("delete MCIS error : %v", err)
+                                        return status, err
+                                }</span>
+                        } else<span class="cov0" title="0"> {
+                                logger.Errorf("delete MCIS error : %v", err)
+                                return status, err
+                        }</span>
+                }
+
+                <span class="cov0" title="0">logger.Infof("delete MCIS OK.. (name=%s)", mcisName)
+                status.Message = fmt.Sprintf("cluster %s has been deleted", mcisName)
+
+                if err := cluster.Delete(); err != nil </span><span class="cov0" title="0">{
+                        status.Message = fmt.Sprintf("cluster %s has been deleted but cannot delete from the store", mcisName)
+                        return status, nil
+                }</span>
+        } else<span class="cov0" title="0"> {
+                logger.Infof("delete Cluster skip (MCIS cannot find).. (name=%s)", mcisName)
+                status.Message = fmt.Sprintf("cluster %s not found", mcisName)
+
+                if err := cluster.Delete(); err != nil </span><span class="cov0" title="0">{
+                        status.Message = fmt.Sprintf("cluster %s not found and cannot delete from the store", mcisName)
+                        return status, nil
+                }</span>
+        }
+
+        <span class="cov0" title="0">status.Code = model.STATUS_SUCCESS
+        return status, nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file19" style="display: none">package service
+
+import (
+        "errors"
+        "fmt"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model/spider"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+)
+
+type NodeConfigInfo struct {
+        model.NodeConfig
+        Csp     config.CSP `json:"csp"`
+        Role    string     `json:"role"`
+        Region  string     `json:"region"`
+        Account string     `json:"account"`
+}
+
+func SetNodeConfigInfos(nodeConfigs []model.NodeConfig, role string) ([]NodeConfigInfo, error) <span class="cov0" title="0">{
+        var nodeConfigInfos []NodeConfigInfo
+
+        for _, nodeConfig := range nodeConfigs </span><span class="cov0" title="0">{
+                conn := spider.NewConnection(nodeConfig.Connection)
+                exists, err := conn.GET()
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, errors.New(fmt.Sprintf("%s Connection connect error (connectionName=%s)", role, nodeConfig.Connection))
+                }</span>
+                <span class="cov0" title="0">if !exists </span><span class="cov0" title="0">{
+                        return nil, errors.New(fmt.Sprintf("%s Connection does not exist (connectionName=%s)", role, nodeConfig.Connection))
+                }</span>
+                <span class="cov0" title="0">csp, err := GetCSPName(conn.ProviderName)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                <span class="cov0" title="0">region := spider.NewRegion(conn.RegionName)
+                exists, err = region.GET()
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, errors.New(fmt.Sprintf("%s get region error (connectionName=%s)", role, nodeConfig.Connection))
+                }</span>
+                <span class="cov0" title="0">if !exists </span><span class="cov0" title="0">{
+                        return nil, errors.New(fmt.Sprintf("%s region does not exist (connectionName=%s)", role, nodeConfig.Connection))
+                }</span>
+                <span class="cov0" title="0">regionName := GetRegionName(region.KeyValueInfoList)
+
+                var nodeConfigInfo NodeConfigInfo
+                nodeConfigInfo.Connection = nodeConfig.Connection
+                nodeConfigInfo.Count = nodeConfig.Count
+                nodeConfigInfo.Spec = nodeConfig.Spec
+                nodeConfigInfo.Csp = csp
+                nodeConfigInfo.Role = role
+                nodeConfigInfo.Region = regionName
+                nodeConfigInfo.Account = GetUserAccount(nodeConfigInfo.Csp)
+
+                nodeConfigInfos = append(nodeConfigInfos, nodeConfigInfo)</span>
+        }
+
+        <span class="cov0" title="0">return nodeConfigInfos, nil</span>
+}
+
+func GetControlPlaneIPs(VMs []model.VM) []string <span class="cov0" title="0">{
+        var IPs []string
+        for _, vm := range VMs </span><span class="cov0" title="0">{
+                if vm.Role == config.CONTROL_PLANE </span><span class="cov0" title="0">{
+                        IPs = append(IPs, vm.PrivateIP)
+                }</span>
+        }
+        <span class="cov0" title="0">return IPs</span>
+}
+</pre>
+		
+		<pre class="file" id="file20" style="display: none">package service
+
+import (
+        "errors"
+        "fmt"
+        "strings"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model/spider"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        logger "github.com/sirupsen/logrus"
+)
+
+const (
+        GCP_IMAGE_ID   = "https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-1804-bionic-v20201014"
+        AZURE_IMAGE_ID = "Canonical:UbuntuServer:18.04-LTS:latest"
+)
+
+// region별 AMI :  (AMI 이름 : ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-20200908, 소유자:099720109477 )
+var imageMap = map[string]string{
+        "us-east-1":      "ami-0817d428a6fb68645", //미국 동부 (버지니아 북부)
+        "us-east-2":      "ami-0e82959d4ed12de3f", //미국 동부 (오하이오)
+        "us-west-1":      "ami-03fac5402e10ea93b", //미국서부 (캘리포니아)
+        "us-west-2":      "ami-07a29e5e945228fa1", //미국서부 (오래곤)
+        "af-south-1":     "",                      //아프리카 (케이프타운)
+        "ap-east-1":      "",                      //아시아 태평양 (홍콩)
+        "ap-south-1":     "ami-03f0fd1a2ba530e75", //아시아 태평양 (뭄바이)
+        "ap-northeast-2": "ami-064ab8637cf33f1bb", //아시아 태평양 (서울)
+        "ap-southeast-1": "ami-0c8e97a27be37adfd", //아시아 태평양 (싱가포르)
+        "ap-southeast-2": "ami-099c1869f33464fde", //아시아 태평양 (시드니)
+        "ap-northeast-1": "ami-02b658ac34935766f", //아시아 태평양 (도쿄)
+        "ca-central-1":   "ami-0c27a26eca5dc74fc", //캐나다 (중부)
+        "eu-central-1":   "ami-092391a11f8aa4b7b", //유럽 (프랑크푸르트)
+        "eu-west-1":      "ami-0823c236601fef765", //유럽 (아일랜드)
+        "eu-west-2":      "ami-09a1e275e350acf38", //유럽 (런던)
+        "eu-south-1":     "",                      //유럽 (밀라노)
+        "eu-west-3":      "ami-014d8dccd70fd2632", //유럽 (파리)
+        "eu-north-1":     "ami-0ede7f804d699ea83", //유럽 (스톡홀름)
+        "me-south-1":     "",                      //중동 (바레인)
+        "sa-east-1":      "ami-0fd2c3d373788b726", //남아메리카 (상파울루)
+}
+
+// get vm user account
+func GetUserAccount(csp config.CSP) string <span class="cov0" title="0">{
+        return "cb-user"
+}</span>
+
+// get vm image-id
+func GetVmImageId(csp config.CSP, configName string) (string, error) <span class="cov0" title="0">{
+
+        if csp == config.CSP_GCP </span><span class="cov0" title="0">{
+                return GCP_IMAGE_ID, nil
+        }</span> else<span class="cov0" title="0"> if csp == config.CSP_AZURE </span><span class="cov0" title="0">{
+                return AZURE_IMAGE_ID, nil
+        }</span> else<span class="cov0" title="0"> if csp == config.CSP_AWS </span><span class="cov0" title="0">{
+                // AWS : 리전별 AMI 가져오기
+                conn := spider.NewConnection(configName)
+                exists, err := conn.GET()
+                if err != nil </span><span class="cov0" title="0">{
+                        return "", err
+                }</span>
+                <span class="cov0" title="0">if !exists </span><span class="cov0" title="0">{
+                        return "", errors.New(fmt.Sprintf("request not found AMI on AWS (cause = not found connection config `%s`)", configName))
+                }</span>
+
+                // http get region data
+                <span class="cov0" title="0">region := spider.NewRegion(conn.RegionName)
+                exists, err = region.GET()
+                if err != nil </span><span class="cov0" title="0">{
+                        return "", err
+                }</span>
+                <span class="cov0" title="0">if !exists </span><span class="cov0" title="0">{
+                        return "", errors.New(fmt.Sprintf("request not found AMI on AWS (cause = not found region, connection='%s', region name='%s')", configName, conn.RegionName))
+                }</span>
+
+                // find region
+                <span class="cov0" title="0">regionName := ""
+                for i := 0; i &lt; len(region.KeyValueInfoList); i++ </span><span class="cov0" title="0">{
+                        if region.KeyValueInfoList[i].Key == "Region" </span><span class="cov0" title="0">{
+                                regionName = region.KeyValueInfoList[i].Value //get region name
+                                break</span>
+                        }
+                }
+                <span class="cov0" title="0">if regionName == "" </span><span class="cov0" title="0">{
+                        return "", errors.New(fmt.Sprintf("request not found AMI on AWS (cause = region name is empty, connection='%s', region name='%s')", configName, conn.RegionName))
+                }</span>
+
+                // TODO [update/hard-coding] region별 image id
+                <span class="cov0" title="0">imageId := imageMap[regionName]
+                if imageId == "" </span><span class="cov0" title="0">{
+                        return "", errors.New(fmt.Sprintf("request not found AMI on AWS image map (connection='%s', region='%s')", configName, regionName))
+                }</span>
+
+                <span class="cov0" title="0">logger.Infof("AMI find OK (ami='%s', region='%s')", imageId, regionName)
+                return imageId, nil</span>
+
+        } else<span class="cov0" title="0"> {
+                return "", errors.New(fmt.Sprintf("CSP '%s' is not supported (Not found \"vm-machine-image\")", csp))
+        }</span>
+
+}
+
+// get CSP Name
+func GetCSPName(providerName string) (config.CSP, error) <span class="cov0" title="0">{
+        switch strings.ToLower(providerName) </span>{
+        case "aws":<span class="cov0" title="0">
+                return config.CSP_AWS, nil</span>
+        case "gcp":<span class="cov0" title="0">
+                return config.CSP_GCP, nil</span>
+        case "azure":<span class="cov0" title="0">
+                return config.CSP_AZURE, nil</span>
+        }
+        <span class="cov0" title="0">return "", errors.New(providerName + "is not supported")</span>
+}
+
+// get Region Name
+func GetRegionName(infoList []spider.KeyValue) string <span class="cov0" title="0">{
+        regionName := ""
+        for i := 0; i &lt; len(infoList); i++ </span><span class="cov0" title="0">{
+                if infoList[i].Key == "Region" || infoList[i].Key == "location" </span><span class="cov0" title="0">{
+                        regionName = infoList[i].Value //get region name
+                        break</span>
+                }
+        }
+        <span class="cov0" title="0">return regionName</span>
+}
+</pre>
+		
+		<pre class="file" id="file21" style="display: none">package service
+
+import (
+        "fmt"
+        "strings"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug"
+        logger "github.com/sirupsen/logrus"
+)
+
+func (nodeConfigInfo *NodeConfigInfo) CreateVPC(namespace string) (*tumblebug.VPC, error) <span class="cov0" title="0">{
+        vpcName := fmt.Sprintf("%s-vpc", getConfigName(nodeConfigInfo.Connection))
+        logger.Infof("start create vpc (name=%s)", vpcName)
+        vpc := tumblebug.NewVPC(namespace, vpcName, nodeConfigInfo.Connection)
+        exists, e := vpc.GET()
+        if e != nil </span><span class="cov0" title="0">{
+                return nil, e
+        }</span>
+        <span class="cov0" title="0">if exists </span><span class="cov0" title="0">{
+                logger.Infof("reuse vpc (name=%s, cause='already exists')", vpcName)
+        }</span> else<span class="cov0" title="0"> {
+                if e = vpc.POST(); e != nil </span><span class="cov0" title="0">{
+                        return nil, e
+                }</span>
+                <span class="cov0" title="0">logger.Infof("create vpc OK.. (name=%s)", vpcName)</span>
+        }
+        <span class="cov0" title="0">return vpc, nil</span>
+}
+
+func (nodeConfigInfo *NodeConfigInfo) CreateFirewall(namespace string) (*tumblebug.Firewall, error) <span class="cov0" title="0">{
+        firewallName := fmt.Sprintf("%s-sg", getConfigName(nodeConfigInfo.Connection))
+        vpcName := fmt.Sprintf("%s-vpc", getConfigName(nodeConfigInfo.Connection))
+        logger.Infof("start create firewall (name=%s)", firewallName)
+        fw := tumblebug.NewFirewall(namespace, firewallName, nodeConfigInfo.Connection)
+        fw.VPCId = vpcName
+        exists, e := fw.GET()
+        if e != nil </span><span class="cov0" title="0">{
+                return nil, e
+        }</span>
+        <span class="cov0" title="0">if exists </span><span class="cov0" title="0">{
+                logger.Infof("reuse firewall (name=%s, cause='already exists')", firewallName)
+        }</span> else<span class="cov0" title="0"> {
+                if e = fw.POST(); e != nil </span><span class="cov0" title="0">{
+                        return nil, e
+                }</span>
+                <span class="cov0" title="0">logger.Infof("create firewall OK.. (name=%s)", firewallName)</span>
+        }
+        <span class="cov0" title="0">return fw, nil</span>
+}
+
+func (nodeConfigInfo *NodeConfigInfo) CreateSshKey(namespace string) (*tumblebug.SSHKey, error) <span class="cov0" title="0">{
+        sshkeyName := fmt.Sprintf("%s-sshkey", getConfigName(nodeConfigInfo.Connection))
+        logger.Infof("start create ssh key (name=%s)", sshkeyName)
+        sshKey := tumblebug.NewSSHKey(namespace, sshkeyName, nodeConfigInfo.Connection)
+        sshKey.Username = nodeConfigInfo.Account
+        exists, e := sshKey.GET()
+        if e != nil </span><span class="cov0" title="0">{
+                return nil, e
+        }</span>
+        <span class="cov0" title="0">if exists </span><span class="cov0" title="0">{
+                logger.Infof("reuse ssh key (name=%s, cause='already exists')", sshkeyName)
+        }</span> else<span class="cov0" title="0"> {
+                if e = sshKey.POST(); e != nil </span><span class="cov0" title="0">{
+                        return nil, e
+                }</span>
+                <span class="cov0" title="0">logger.Infof("create ssh key OK.. (name=%s)", sshkeyName)</span>
+        }
+        <span class="cov0" title="0">return sshKey, nil</span>
+}
+
+func (nodeConfigInfo *NodeConfigInfo) CreateImage(namespace string) (*tumblebug.Image, error) <span class="cov0" title="0">{
+        imageId, e := GetVmImageId(nodeConfigInfo.Csp, nodeConfigInfo.Connection)
+        if e != nil </span><span class="cov0" title="0">{
+                return nil, e
+        }</span>
+
+        <span class="cov0" title="0">imageName := fmt.Sprintf("%s-ubuntu1804", getConfigName(nodeConfigInfo.Connection))
+        logger.Infof("start create image (name=%s)", imageName)
+        image := tumblebug.NewImage(namespace, imageName, nodeConfigInfo.Connection)
+        image.CspImageId = imageId
+        exists, e := image.GET()
+        if e != nil </span><span class="cov0" title="0">{
+                return nil, e
+        }</span>
+        <span class="cov0" title="0">if exists </span><span class="cov0" title="0">{
+                logger.Infof("reuse image (name=%s, cause='already exists')", imageName)
+        }</span> else<span class="cov0" title="0"> {
+                if e = image.POST(); e != nil </span><span class="cov0" title="0">{
+                        return nil, e
+                }</span>
+                <span class="cov0" title="0">logger.Infof("create image OK.. (name=%s)", imageName)</span>
+        }
+        <span class="cov0" title="0">return image, nil</span>
+}
+
+func (nodeConfigInfo *NodeConfigInfo) CreateSpec(namespace string) (*tumblebug.Spec, error) <span class="cov0" title="0">{
+        specName := fmt.Sprintf("%s-%s-spec", getConfigName(nodeConfigInfo.Connection), getSpecName(nodeConfigInfo.Spec))
+        logger.Infof("start create spec (name=%s)", specName)
+        spec := tumblebug.NewSpec(namespace, specName, nodeConfigInfo.Connection)
+        spec.CspSpecName = nodeConfigInfo.Spec
+        exists, e := spec.GET()
+        if e != nil </span><span class="cov0" title="0">{
+                return nil, e
+        }</span>
+        <span class="cov0" title="0">if exists </span><span class="cov0" title="0">{
+                logger.Infof("reuse spec (name=%s, cause='already exists')", specName)
+        }</span> else<span class="cov0" title="0"> {
+                if e = spec.POST(); e != nil </span><span class="cov0" title="0">{
+                        return nil, e
+                }</span>
+                <span class="cov0" title="0">logger.Infof("create spec OK.. (name=%s)", specName)</span>
+        }
+        <span class="cov0" title="0">return spec, nil</span>
+}
+
+func getConfigName(name string) string <span class="cov0" title="0">{
+        return strings.ReplaceAll(name, "config-", "")
+}</span>
+
+func getSpecName(name string) string <span class="cov0" title="0">{
+        specName := strings.ReplaceAll(name, ".", "-")
+        specName = strings.ReplaceAll(specName, "_", "-")
+        specName = strings.ReplaceAll(specName, " ", "-")
+        specName = strings.ToLower(specName)
+        return specName
+}</span>
+</pre>
+		
+		<pre class="file" id="file22" style="display: none">package service
+
+import (
+        "encoding/json"
+        "errors"
+        "fmt"
+        "strings"
+        "sync"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/common"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model/tumblebug"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/lang"
+
+        ssh "github.com/cloud-barista/cb-spider/cloud-control-manager/vm-ssh"
+        logger "github.com/sirupsen/logrus"
+)
+
+func ListNode(namespace string, clusterName string) (*model.NodeList, error) <span class="cov0" title="0">{
+        nodes := model.NewNodeList(namespace, clusterName)
+        err := nodes.SelectList()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov0" title="0">return nodes, nil</span>
+}
+
+func GetNode(namespace string, clusterName string, nodeName string) (*model.Node, error) <span class="cov0" title="0">{
+        node := model.NewNode(namespace, clusterName, nodeName)
+        err := node.Select()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+
+        <span class="cov0" title="0">return node, nil</span>
+}
+
+func AddNode(namespace string, clusterName string, req *model.NodeReq) (*model.NodeList, error) <span class="cov0" title="0">{
+
+        mcisName := clusterName
+        mcis := tumblebug.NewMCIS(namespace, mcisName)
+
+        exists, err := mcis.GET()
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if !exists </span><span class="cov0" title="0">{
+                return nil, errors.New("MCIS not found")
+        }</span>
+
+        // get join command
+        <span class="cov0" title="0">workerJoinCmd, err := getWorkerJoinCmdForAddNode(namespace, clusterName)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, errors.New("join command cannot get")
+        }</span>
+        <span class="cov0" title="0">networkCni := getClusterNetworkCNI(namespace, clusterName)
+
+        var nodeConfigInfos []NodeConfigInfo
+        // worker
+        wk, err := SetNodeConfigInfos(req.Worker, config.WORKER)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">nodeConfigInfos = append(nodeConfigInfos, wk...)
+
+        cIdx := 0
+        wIdx := 0
+        maxCIdx, maxWIdx := getMaxIdx(namespace, clusterName)
+        var TVMs []tumblebug.TVM
+
+        for _, nodeConfigInfo := range nodeConfigInfos </span><span class="cov0" title="0">{
+                // MCIR - 존재하면 재활용 없다면 생성 기준
+                // 1. create vpc
+                vpc, err := nodeConfigInfo.CreateVPC(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 2. create firewall
+                <span class="cov0" title="0">fw, err := nodeConfigInfo.CreateFirewall(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 3. create sshKey
+                <span class="cov0" title="0">sshKey, err := nodeConfigInfo.CreateSshKey(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 4. create image
+                <span class="cov0" title="0">image, err := nodeConfigInfo.CreateImage(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 5. create spec
+                <span class="cov0" title="0">spec, err := nodeConfigInfo.CreateSpec(namespace)
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+
+                // 6. vm
+                <span class="cov0" title="0">for i := 0; i &lt; nodeConfigInfo.Count; i++ </span><span class="cov0" title="0">{
+                        if nodeConfigInfo.Role == config.CONTROL_PLANE </span><span class="cov0" title="0">{
+                                cIdx++
+                        }</span> else<span class="cov0" title="0"> {
+                                wIdx++
+                        }</span>
+                        <span class="cov0" title="0">tvm := tumblebug.NewTVm(namespace, mcisName)
+                        tvm.VM = model.VM{
+                                Config:       nodeConfigInfo.Connection,
+                                VPC:          vpc.Name,
+                                Subnet:       vpc.Subnets[0].Name,
+                                Firewall:     []string{fw.Name},
+                                SSHKey:       sshKey.Name,
+                                Image:        image.Name,
+                                Spec:         spec.Name,
+                                UserAccount:  nodeConfigInfo.Account,
+                                UserPassword: "",
+                                Description:  "",
+                                Credential:   sshKey.PrivateKey,
+                                Role:         nodeConfigInfo.Role,
+                                Csp:          nodeConfigInfo.Csp,
+                        }
+
+                        if nodeConfigInfo.Role == config.CONTROL_PLANE </span><span class="cov0" title="0">{
+                                tvm.VM.Name = lang.GetNodeName(clusterName, config.CONTROL_PLANE, maxCIdx+cIdx)
+                        }</span> else<span class="cov0" title="0"> {
+                                tvm.VM.Name = lang.GetNodeName(clusterName, config.WORKER, maxWIdx+wIdx)
+                        }</span>
+
+                        // vm 생성
+                        <span class="cov0" title="0">logger.Infof("start create VM (mcisname=%s, nodename=%s)", mcisName, tvm.VM.Name)
+                        err := tvm.POST()
+                        if err != nil </span><span class="cov0" title="0">{
+                                logger.Warnf("create VM error (mcisname=%s, nodename=%s)", mcisName, tvm.VM.Name)
+                                return nil, err
+                        }</span>
+                        <span class="cov0" title="0">logger.Infof("create VM OK.. (mcisname=%s, nodename=%s)", mcisName, tvm.VM.Name)
+
+                        TVMs = append(TVMs, *tvm)</span>
+                }
+        }
+
+        <span class="cov0" title="0">var wg sync.WaitGroup
+        c := make(chan error)
+        wg.Add(len(TVMs))
+
+        logger.Infoln("start connect VMs")
+        for _, tvm := range TVMs </span><span class="cov0" title="0">{
+                go func(vm model.VM) </span><span class="cov0" title="0">{
+                        defer wg.Done()
+                        sshInfo := ssh.SSHInfo{
+                                UserName:   GetUserAccount(vm.Csp),
+                                PrivateKey: []byte(vm.Credential),
+                                ServerPort: fmt.Sprintf("%s:22", vm.PublicIP),
+                        }
+
+                        _ = vm.ConnectionTest(&amp;sshInfo)
+                        err := vm.CopyScripts(&amp;sshInfo, networkCni)
+                        if err != nil </span><span class="cov0" title="0">{
+                                c &lt;- err
+                        }</span>
+
+                        <span class="cov0" title="0">logger.Infof("set systemd service (vm=%s)", vm.Name)
+                        err = vm.SetSystemd(&amp;sshInfo, networkCni)
+                        if err != nil </span><span class="cov0" title="0">{
+                                c &lt;- err
+                        }</span>
+
+                        <span class="cov0" title="0">logger.Infof("bootstrap (vm=%s)", vm.Name)
+                        err = vm.Bootstrap(&amp;sshInfo)
+                        if err != nil </span><span class="cov0" title="0">{
+                                c &lt;- err
+                        }</span>
+
+                        <span class="cov0" title="0">logger.Infof("join (vm=%s)", vm.Name)
+                        err = vm.WorkerJoin(&amp;sshInfo, &amp;workerJoinCmd)
+                        if err != nil </span><span class="cov0" title="0">{
+                                c &lt;- err
+                        }</span>
+                }(tvm.VM)
+        }
+
+        <span class="cov0" title="0">go func() </span><span class="cov0" title="0">{
+                wg.Wait()
+                close(c)
+                logger.Infoln("end connect VMs")
+        }</span>()
+
+        <span class="cov0" title="0">for err := range c </span><span class="cov0" title="0">{
+                if err != nil </span><span class="cov0" title="0">{
+                        logger.Warnf("worker join error (cause=%v)", err)
+                        return nil, err
+                }</span>
+        }
+
+        // insert store
+        <span class="cov0" title="0">nodes := model.NewNodeList(namespace, clusterName)
+        for _, vm := range TVMs </span><span class="cov0" title="0">{
+                node := model.NewNodeVM(namespace, clusterName, vm.VM)
+                node.UId = lang.GetUid()
+                err := node.Insert()
+                if err != nil </span><span class="cov0" title="0">{
+                        return nil, err
+                }</span>
+                <span class="cov0" title="0">nodes.Items = append(nodes.Items, *node)</span>
+        }
+
+        <span class="cov0" title="0">return nodes, nil</span>
+}
+
+func RemoveNode(namespace string, clusterName string, nodeName string) (*model.Status, error) <span class="cov0" title="0">{
+        status := model.NewStatus()
+        status.Code = model.STATUS_UNKNOWN
+
+        cpNode, err := getCPLeaderNode(namespace, clusterName)
+        if err != nil </span><span class="cov0" title="0">{
+                status.Message = "control-plane node not found"
+                return status, err
+        }</span>
+
+        <span class="cov0" title="0">hostName, err := getHostName(namespace, clusterName, nodeName)
+        if err != nil </span><span class="cov0" title="0">{
+                status.Message = "get node name error"
+                return status, err
+        }</span>
+
+        // drain node
+        <span class="cov0" title="0">userAccount := GetUserAccount(cpNode.Csp)
+        sshInfo := ssh.SSHInfo{
+                UserName:   userAccount,
+                PrivateKey: []byte(cpNode.Credential),
+                ServerPort: fmt.Sprintf("%s:22", cpNode.PublicIP),
+        }
+        cmd := fmt.Sprintf("sudo kubectl drain %s --kubeconfig=/etc/kubernetes/admin.conf --ignore-daemonsets --force --delete-local-data", hostName)
+        result, err := ssh.SSHRun(sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                status.Message = "kubectl drain failed"
+                return status, err
+        }</span>
+        <span class="cov0" title="0">if strings.Contains(result, fmt.Sprintf("node/%s drained", hostName)) || strings.Contains(result, fmt.Sprintf("node/%s evicted", hostName)) </span><span class="cov0" title="0">{
+                logger.Infoln("drain node success")
+        }</span> else<span class="cov0" title="0"> {
+                status.Message = "kubectl drain failed"
+                return status, err
+        }</span>
+
+        // delete node
+        <span class="cov0" title="0">cmd = fmt.Sprintf("sudo kubectl delete node %s --kubeconfig=/etc/kubernetes/admin.conf", hostName)
+        result, err = ssh.SSHRun(sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                status.Message = "kubectl delete node failed"
+                return status, err
+        }</span>
+        <span class="cov0" title="0">if strings.Contains(result, "deleted") </span><span class="cov0" title="0">{
+                logger.Infoln("delete node success")
+        }</span> else<span class="cov0" title="0"> {
+                status.Message = "kubectl delete node failed"
+                return status, errors.New("kubectl delete node failed")
+        }</span>
+
+        // delete vm
+        <span class="cov0" title="0">vm := tumblebug.NewTVm(namespace, clusterName)
+        vm.VM.Name = nodeName
+        err = vm.DELETE()
+        if err != nil </span><span class="cov0" title="0">{
+                status.Message = "delete vm failed"
+                return status, err
+        }</span>
+
+        // delete node in store
+        <span class="cov0" title="0">node := model.NewNode(namespace, clusterName, nodeName)
+        if err := node.Delete(); err != nil </span><span class="cov0" title="0">{
+                status.Message = err.Error()
+                return status, nil
+        }</span>
+
+        <span class="cov0" title="0">status.Code = model.STATUS_SUCCESS
+        status.Message = "success"
+
+        return status, nil</span>
+}
+
+func getCluster(namespace string, clusterName string) (*model.Cluster, error) <span class="cov0" title="0">{
+        key := lang.GetStoreClusterKey(namespace, clusterName)
+        keyValue, err := common.CBStore.Get(key)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if keyValue == nil </span><span class="cov0" title="0">{
+                return nil, errors.New(fmt.Sprintf("%s not found", key))
+        }</span>
+        <span class="cov0" title="0">cluster := &amp;model.Cluster{}
+        json.Unmarshal([]byte(keyValue.Value), cluster)
+
+        return cluster, nil</span>
+}
+
+func getCPLeaderNode(namespace string, clusterName string) (*model.Node, error) <span class="cov0" title="0">{
+        cluster, err := getCluster(namespace, clusterName)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, errors.New("cluster info not found")
+        }</span>
+        <span class="cov0" title="0">CpLeader := cluster.CpLeader
+
+        key := lang.GetStoreNodeKey(namespace, clusterName, "")
+        keyValues, err := common.CBStore.GetList(key, true)
+        if err != nil </span><span class="cov0" title="0">{
+                return nil, err
+        }</span>
+        <span class="cov0" title="0">if keyValues == nil </span><span class="cov0" title="0">{
+                return nil, errors.New(fmt.Sprintf("%s not found", key))
+        }</span>
+        <span class="cov0" title="0">cpNode := &amp;model.Node{}
+        for _, keyValue := range keyValues </span><span class="cov0" title="0">{
+                node := &amp;model.Node{}
+                json.Unmarshal([]byte(keyValue.Value), &amp;node)
+                if node.Name == CpLeader </span><span class="cov0" title="0">{
+                        cpNode = node
+                        break</span>
+                }
+        }
+
+        <span class="cov0" title="0">return cpNode, nil</span>
+}
+
+func getClusterNetworkCNI(namespace string, clusterName string) string <span class="cov0" title="0">{
+        cluster, err := getCluster(namespace, clusterName)
+        if err != nil </span><span class="cov0" title="0">{
+                return ""
+        }</span>
+
+        <span class="cov0" title="0">return cluster.NetworkCni</span>
+}
+
+func getHostName(namespace string, clusterName string, nodeName string) (string, error) <span class="cov0" title="0">{
+        key := lang.GetStoreNodeKey(namespace, clusterName, "")
+        keyValues, err := common.CBStore.GetList(key, true)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", err
+        }</span>
+        <span class="cov0" title="0">if keyValues == nil </span><span class="cov0" title="0">{
+                return "", errors.New(fmt.Sprintf("%s not found", key))
+        }</span>
+        <span class="cov0" title="0">dNode := &amp;model.Node{}
+        for _, keyValue := range keyValues </span><span class="cov0" title="0">{
+                node := &amp;model.Node{}
+                json.Unmarshal([]byte(keyValue.Value), &amp;node)
+                if node.Name == nodeName </span><span class="cov0" title="0">{
+                        dNode = node
+                        break</span>
+                }
+        }
+
+        <span class="cov0" title="0">userAccount := GetUserAccount(dNode.Csp)
+        sshInfo := ssh.SSHInfo{
+                UserName:   userAccount,
+                PrivateKey: []byte(dNode.Credential),
+                ServerPort: fmt.Sprintf("%s:22", dNode.PublicIP),
+        }
+        cmd := "/bin/hostname"
+        hostName, err := ssh.SSHRun(sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", err
+        }</span>
+        <span class="cov0" title="0">return hostName, nil</span>
+}
+
+func getWorkerJoinCmdForAddNode(namespace string, clusterName string) (string, error) <span class="cov0" title="0">{
+        cpNode, err := getCPLeaderNode(namespace, clusterName)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", errors.New("control-plane node not found")
+        }</span>
+        <span class="cov0" title="0">userAccount := GetUserAccount(cpNode.Csp)
+        sshInfo := ssh.SSHInfo{
+                UserName:   userAccount,
+                PrivateKey: []byte(cpNode.Credential),
+                ServerPort: fmt.Sprintf("%s:22", cpNode.PublicIP),
+        }
+        cmd := "sudo kubeadm token create --print-join-command"
+        result, err := ssh.SSHRun(sshInfo, cmd)
+        if err != nil </span><span class="cov0" title="0">{
+                return "", err
+        }</span>
+        <span class="cov0" title="0">return result, nil</span>
+}
+
+func getMaxIdx(namespace string, clusterName string) (maxCpIdx int, maxWkIdx int) <span class="cov0" title="0">{
+        maxCpIdx = 0
+        maxWkIdx = 0
+
+        nodes := model.NewNodeList(namespace, clusterName)
+        err := nodes.SelectList()
+        if err != nil </span><span class="cov0" title="0">{
+                return
+        }</span>
+
+        <span class="cov0" title="0">var arrCp, arrWk []int
+        for _, node := range nodes.Items </span><span class="cov0" title="0">{
+                slice := strings.Split(node.Name, "-")
+                role := len(slice) - 3
+                idx := len(slice) - 2
+
+                if slice[role] == "c" </span><span class="cov0" title="0">{
+                        arrCp = append(arrCp, lang.GetIdxToInt(slice[idx]))
+                }</span> else<span class="cov0" title="0"> if slice[role] == "w" </span><span class="cov0" title="0">{
+                        arrWk = append(arrWk, lang.GetIdxToInt(slice[idx]))
+                }</span>
+        }
+        <span class="cov0" title="0">fmt.Println(maxCpIdx, maxWkIdx)
+        maxCpIdx = lang.GetMaxNumber(arrCp)
+        maxWkIdx = lang.GetMaxNumber(arrWk)
+        return</span>
+}
+</pre>
+		
+		<pre class="file" id="file23" style="display: none">package router
+
+import (
+        "net/http"
+        "time"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/service"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/app"
+        "github.com/labstack/echo/v4"
+
+        logger "github.com/sirupsen/logrus"
+)
+
+// ListCluster
+// @Tags Cluster
+// @Summary List Cluster
+// @Description List Cluster
+// @ID ListCluster
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Success 200 {object} model.ClusterList
+// @Router /ns/{namespace}/clusters [get]
+func ListCluster(c echo.Context) error <span class="cov0" title="0">{
+        clusterList, err := service.ListCluster(c.Param("namespace"))
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">return app.Send(c, http.StatusOK, clusterList)</span>
+}
+
+// GetCluster
+// @Tags Cluster
+// @Summary Get Cluster
+// @Description Get Cluster
+// @ID GetCluster
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Param        cluster        path        string        true  "cluster"
+// @Success 200 {object} model.Cluster
+// @Router /ns/{namespace}/clusters/{cluster} [get]
+func GetCluster(c echo.Context) error <span class="cov0" title="0">{
+        if err := app.Validate(c, []string{"namespace", "cluster"}); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">cluster, err := service.GetCluster(c.Param("namespace"), c.Param("cluster"))
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Infof("not found a cluster (namespace=%s, cluster=%s, cause=%s)", c.Param("namespace"), c.Param("cluster"), err)
+                return app.SendMessage(c, http.StatusNotFound, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">return app.Send(c, http.StatusOK, cluster)</span>
+}
+
+// CreateCluster
+// @Tags Cluster
+// @Summary Create Cluster
+// @Description Create Cluster
+// @ID CreateCluster
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Param json body model.ClusterReq true "Reuest json"
+// @Success 200 {object} model.Cluster
+// @Router /ns/{namespace}/clusters [post]
+func CreateCluster(c echo.Context) error <span class="cov0" title="0">{
+        start := time.Now()
+        clusterReq := &amp;model.ClusterReq{}
+        if err := c.Bind(clusterReq); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">app.ClusterReqDef(*clusterReq)
+
+        err := app.ClusterReqValidate(*clusterReq)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">cluster, err := service.CreateCluster(c.Param("namespace"), clusterReq)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">duration := time.Since(start)
+        logger.Info("duration := ", duration)
+        return app.Send(c, http.StatusOK, cluster)</span>
+}
+
+// DeleteCluster
+// @Tags Cluster
+// @Summary Delete a cluster
+// @Description Delete a cluster
+// @ID DeleteCluster
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Param        cluster        path        string        true  "cluster"
+// @Success 200 {object} model.Status
+// @Router /ns/{namespace}/clusters/{cluster} [delete]
+func DeleteCluster(c echo.Context) error <span class="cov0" title="0">{
+        if err := app.Validate(c, []string{"namespace", "cluster"}); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">status, err := service.DeleteCluster(c.Param("namespace"), c.Param("cluster"))
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">return app.Send(c, http.StatusOK, status)</span>
+}
+</pre>
+		
+		<pre class="file" id="file24" style="display: none">package router
+
+import (
+        "net/http"
+
+        "github.com/labstack/echo/v4"
+)
+
+// Healthy Method
+// @Tags Default
+// @Summary Health Check
+// @Description for health check
+// @ID Healthy
+// @Accept json
+// @Produce json
+// @Success 200 {string} string "ok"
+// @Router /healthy [get]
+func Healthy(c echo.Context) error <span class="cov8" title="1">{
+        return c.String(http.StatusOK, "cb-barista cb-ladybug")
+}</span>
+</pre>
+		
+		<pre class="file" id="file25" style="display: none">package router
+
+import (
+        "net/http"
+        "time"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/service"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/app"
+
+        "github.com/labstack/echo/v4"
+        logger "github.com/sirupsen/logrus"
+)
+
+// ListNode
+// @Tags Node
+// @Summary List Node
+// @Description List Node
+// @ID ListNode
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Param        cluster        path        string        true  "cluster"
+// @Success 200 {object} model.NodeList
+// @Router /ns/{namespace}/clusters/{cluster}/nodes [get]
+func ListNode(c echo.Context) error <span class="cov0" title="0">{
+        if err := app.Validate(c, []string{"cluster"}); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">nodeList, err := service.ListNode(c.Param("namespace"), c.Param("cluster"))
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">return app.Send(c, http.StatusOK, nodeList)</span>
+}
+
+// GetNode
+// @Tags Node
+// @Summary Get Node
+// @Description Get Node
+// @ID GetNode
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Param        cluster        path        string        true  "cluster"
+// @Param        node        path        string        true  "node"
+// @Success 200 {object} model.Node
+// @Router /ns/{namespace}/clusters/{cluster}/nodes/{node} [get]
+func GetNode(c echo.Context) error <span class="cov0" title="0">{
+        if err := app.Validate(c, []string{"cluster", "node"}); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">node, err := service.GetNode(c.Param("namespace"), c.Param("cluster"), c.Param("node"))
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Infof("not found a node (namespace=%s, cluster=%s, node=%s, cause=%s)", c.Param("namespace"), c.Param("cluster"), c.Param("node"), err)
+                return app.SendMessage(c, http.StatusNotFound, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">return app.Send(c, http.StatusOK, node)</span>
+}
+
+// AddNode
+// @Tags Node
+// @Summary Add Node
+// @Description Add Node
+// @ID AddNode
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Param        cluster        path        string        true  "cluster"
+// @Param json body model.NodeReq true "Reuest json"
+// @Success 200 {object} model.Node
+// @Router /ns/{namespace}/clusters/{cluster}/nodes [post]
+func AddNode(c echo.Context) error <span class="cov0" title="0">{
+        start := time.Now()
+        if err := app.Validate(c, []string{"cluster"}); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">nodeReq := &amp;model.NodeReq{}
+        if err := c.Bind(nodeReq); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">err := app.NodeReqValidate(*nodeReq)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">node, err := service.AddNode(c.Param("namespace"), c.Param("cluster"), nodeReq)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">duration := time.Since(start)
+        logger.Info(" duration := ", duration)
+        return app.Send(c, http.StatusOK, node)</span>
+}
+
+// RemoveNode
+// @Tags Node
+// @Summary Remove Node
+// @Description Remove Node
+// @ID RemoveNode
+// @Accept json
+// @Produce json
+// @Param        namespace        path        string        true  "namespace"
+// @Param        cluster        path        string        true  "cluster"
+// @Param        node        path        string        true  "node"
+// @Success 200 {object} model.Status
+// @Router /ns/{namespace}/clusters/{cluster}/nodes/{node} [delete]
+func RemoveNode(c echo.Context) error <span class="cov0" title="0">{
+        if err := app.Validate(c, []string{"cluster", "node"}); err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">status, err := service.RemoveNode(c.Param("namespace"), c.Param("cluster"), c.Param("node"))
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Error(err)
+                return app.SendMessage(c, http.StatusBadRequest, err.Error())
+        }</span>
+
+        <span class="cov0" title="0">return app.Send(c, http.StatusOK, status)</span>
+}
+</pre>
+		
+		<pre class="file" id="file26" style="display: none">package app
+
+import (
+        "errors"
+        "fmt"
+
+        "github.com/beego/beego/v2/core/validation"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/core/model"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/lang"
+        "github.com/labstack/echo/v4"
+)
+
+type Status struct {
+        Message string `json:"message"`
+}
+
+func SendMessage(c echo.Context, httpCode int, msg string) error <span class="cov0" title="0">{
+        return c.JSON(httpCode, Status{Message: msg})
+}</span>
+
+func Send(c echo.Context, httpCode int, json interface{}) error <span class="cov0" title="0">{
+        return c.JSON(httpCode, json)
+}</span>
+
+func Validate(c echo.Context, params []string) error <span class="cov0" title="0">{
+        valid := validation.Validation{}
+
+        for _, name := range params </span><span class="cov0" title="0">{
+                valid.Required(c.Param(name), name)
+        }</span>
+
+        <span class="cov0" title="0">if valid.HasErrors() </span><span class="cov0" title="0">{
+                for _, err := range valid.Errors </span><span class="cov0" title="0">{
+                        return errors.New(fmt.Sprintf("[%s]%s", err.Key, err.Error()))
+                }</span>
+        }
+        <span class="cov0" title="0">return nil</span>
+}
+
+func ClusterReqDef(clusterReq model.ClusterReq) <span class="cov0" title="0">{
+        clusterReq.Config.Kubernetes.NetworkCni = lang.NVL(clusterReq.Config.Kubernetes.NetworkCni, config.NETWORKCNI_KILO)
+        clusterReq.Config.Kubernetes.PodCidr = lang.NVL(clusterReq.Config.Kubernetes.PodCidr, config.POD_CIDR)
+        clusterReq.Config.Kubernetes.ServiceCidr = lang.NVL(clusterReq.Config.Kubernetes.ServiceCidr, config.SERVICE_CIDR)
+        clusterReq.Config.Kubernetes.ServiceDnsDomain = lang.NVL(clusterReq.Config.Kubernetes.ServiceDnsDomain, config.SERVICE_DOMAIN)
+}</span>
+
+func ClusterReqValidate(req model.ClusterReq) error <span class="cov0" title="0">{
+        if len(req.ControlPlane) == 0 </span><span class="cov0" title="0">{
+                return errors.New("control plane node must be at least one")
+        }</span>
+        <span class="cov0" title="0">if len(req.ControlPlane) &gt; 1 </span><span class="cov0" title="0">{
+                return errors.New("only one control plane node is supported")
+        }</span>
+        <span class="cov0" title="0">if len(req.Worker) == 0 </span><span class="cov0" title="0">{
+                return errors.New("worker node must be at least one")
+        }</span>
+        <span class="cov0" title="0">if !(req.Config.Kubernetes.NetworkCni == config.NETWORKCNI_CANAL || req.Config.Kubernetes.NetworkCni == config.NETWORKCNI_KILO) </span><span class="cov0" title="0">{
+                return errors.New("network cni allows only kilo or canal")
+        }</span>
+
+        <span class="cov0" title="0">if len(req.Name) == 0 </span><span class="cov0" title="0">{
+                return errors.New("cluster name is empty")
+        }</span> else<span class="cov0" title="0"> {
+                err := lang.CheckName(req.Name)
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        }
+
+        <span class="cov0" title="0">if len(req.Config.Kubernetes.PodCidr) &gt; 0 </span><span class="cov0" title="0">{
+                err := lang.CheckIpCidr("podCidr", req.Config.Kubernetes.PodCidr)
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        }
+        <span class="cov0" title="0">if len(req.Config.Kubernetes.ServiceCidr) &gt; 0 </span><span class="cov0" title="0">{
+                err := lang.CheckIpCidr("serviceCidr", req.Config.Kubernetes.ServiceCidr)
+                if err != nil </span><span class="cov0" title="0">{
+                        return err
+                }</span>
+        }
+
+        <span class="cov0" title="0">return nil</span>
+}
+
+func NodeReqValidate(req model.NodeReq) error <span class="cov0" title="0">{
+        if len(req.ControlPlane) &gt; 0 </span><span class="cov0" title="0">{
+                return errors.New("control plane node is not supported")
+        }</span>
+        <span class="cov0" title="0">if len(req.Worker) == 0 </span><span class="cov0" title="0">{
+                return errors.New("worker node must be at least one")
+        }</span>
+
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		<pre class="file" id="file27" style="display: none">package app
+
+import (
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/config"
+        "github.com/go-resty/resty/v2"
+)
+
+func ExecutHTTP(method string, url string, body interface{}, result interface{}) (*resty.Response, error) <span class="cov0" title="0">{
+
+        conf := config.Config
+
+        req := resty.New().SetDisableWarn(true).R().SetBasicAuth(*conf.Username, *conf.Password)
+
+        if body != nil </span><span class="cov0" title="0">{
+                req.SetBody(body)
+        }</span>
+        <span class="cov0" title="0">if result != nil </span><span class="cov0" title="0">{
+                req.SetResult(result)
+        }</span>
+
+        // execute
+        <span class="cov0" title="0">return req.Execute(method, url)</span>
+
+}
+</pre>
+		
+		<pre class="file" id="file28" style="display: none">package config
+
+import (
+        "flag"
+        "os"
+
+        "github.com/cloud-barista/poc-cicd-ladybug/src/utils/lang"
+        "github.com/sirupsen/logrus"
+        logger "github.com/sirupsen/logrus"
+)
+
+type conf struct {
+        RunMode      *string
+        SpiderUrl    *string
+        TumblebugUrl *string
+        RootURL      *string
+        Username     *string
+        Password     *string
+        AppRootPath  *string
+        LoglevelHTTP *bool
+}
+
+var Config = &amp;conf{}
+
+func Setup() <span class="cov0" title="0">{
+
+        var logLevel *string
+
+        Config.AppRootPath = flag.String("app-root", lang.NVL(os.Getenv("APP_ROOT"), ""), "application root path")
+        Config.RootURL = flag.String("root-url", lang.NVL(os.Getenv("BASE_URL"), "/ladybug"), "root url")
+        Config.SpiderUrl = flag.String("spider-url", lang.NVL(os.Getenv("SPIDER_URL"), "http://localhost:1024/spider"), "cb-spider service end-point url")
+        Config.TumblebugUrl = flag.String("tumblebug-url", lang.NVL(os.Getenv("TUMBLEBUG_URL"), "http://localhost:1323/tumblebug"), "cb-tumblebug service end-point url")
+        Config.Username = flag.String("basic-auth-username", lang.NVL(os.Getenv("BASIC_AUTH_USERNAME"), "default"), "rest-api basic auth usernmae")
+        Config.Password = flag.String("basic-auth-password", lang.NVL(os.Getenv("BASIC_AUTH_PASSWORD"), "default"), "rest-api basic auth password")
+        logLevel = flag.String("log-level", lang.NVL(os.Getenv("LOG_LEVEL"), "info"), "The log level")
+        Config.LoglevelHTTP = flag.Bool("log-http", os.Getenv("LOG_HTTP") == "true", "The logging http data")
+
+        flag.Parse()
+
+        //logger
+        logger.SetFormatter(&amp;logrus.TextFormatter{})
+        logger.SetOutput(os.Stderr)
+
+        level, err := logrus.ParseLevel(*logLevel)
+        if err != nil </span><span class="cov0" title="0">{
+                logger.Fatal(err)
+        }</span> else<span class="cov0" title="0"> if level != logrus.GetLevel() </span><span class="cov0" title="0">{
+                logger.SetLevel(level)
+        }</span> else<span class="cov0" title="0"> {
+                logger.SetLevel(logrus.InfoLevel)
+        }</span>
+
+        // app root path
+        <span class="cov0" title="0">if len(*Config.AppRootPath) == 0 </span><span class="cov0" title="0">{
+                if pwd, err := os.Getwd(); err == nil </span><span class="cov0" title="0">{
+                        Config.AppRootPath = &amp;pwd
+                }</span>
+        }
+
+}
+</pre>
+		
+		<pre class="file" id="file29" style="display: none">package lang
+
+import (
+        "errors"
+        "fmt"
+        "math/rand"
+        "regexp"
+        "strconv"
+        "time"
+
+        "github.com/google/uuid"
+)
+
+const (
+        // Random string generation
+        letterBytes   = "abcdefghijklmnopqrstuvwxyz1234567890"
+        letterIdxBits = 6
+        letterIdxMask = 1&lt;&lt;letterIdxBits - 1
+        letterIdxMax  = 63 / letterIdxBits
+)
+
+var (
+        // Random source by nano time
+        randSrc = rand.NewSource(time.Now().UnixNano())
+)
+
+// NVL is null value logic
+func NVL(str string, def string) string <span class="cov8" title="1">{
+        if len(str) == 0 </span><span class="cov8" title="1">{
+                return def
+        }</span>
+        <span class="cov8" title="1">return str</span>
+}
+
+// get store cluster key
+func GetStoreClusterKey(namespace string, clusterName string) string <span class="cov0" title="0">{
+        if clusterName == "" </span><span class="cov0" title="0">{
+                return fmt.Sprintf("/ns/%s/clusters", namespace)
+        }</span> else<span class="cov0" title="0"> {
+                return fmt.Sprintf("/ns/%s/clusters/%s", namespace, clusterName)
+        }</span>
+}
+
+// get store node key
+func GetStoreNodeKey(namespace string, clusterName string, nodeName string) string <span class="cov0" title="0">{
+        if nodeName == "" </span><span class="cov0" title="0">{
+                return fmt.Sprintf("/ns/%s/clusters/%s/nodes", namespace, clusterName)
+        }</span> else<span class="cov0" title="0"> {
+                return fmt.Sprintf("/ns/%s/clusters/%s/nodes/%s", namespace, clusterName, nodeName)
+        }</span>
+}
+
+// get uuid
+func GetUid() string <span class="cov0" title="0">{
+        return uuid.New().String()
+}</span>
+
+// Random string generation
+func GetRandomString(n int) string <span class="cov0" title="0">{
+        b := make([]byte, n)
+        for i, cache, remain := n-1, randSrc.Int63(), letterIdxMax; i &gt;= 0; </span><span class="cov0" title="0">{
+                if remain == 0 </span><span class="cov0" title="0">{
+                        cache, remain = randSrc.Int63(), letterIdxMax
+                }</span>
+                <span class="cov0" title="0">if idx := int(cache &amp; letterIdxMask); idx &lt; len(letterBytes) </span><span class="cov0" title="0">{
+                        b[i] = letterBytes[idx]
+                        i--
+                }</span>
+                <span class="cov0" title="0">cache &gt;&gt;= letterIdxBits
+                remain--</span>
+        }
+        <span class="cov0" title="0">return string(b)</span>
+}
+
+// get node name
+func GetNodeName(clusterName string, role string, idx int) string <span class="cov0" title="0">{
+        return fmt.Sprintf("%s-%s-%d-%s", clusterName, role[:1], idx, GetRandomString(5))
+}</span>
+
+func GetIdxToInt(idx string) int <span class="cov0" title="0">{
+        i, err := strconv.Atoi(idx)
+        if err != nil </span><span class="cov0" title="0">{
+                i = 0
+        }</span>
+        <span class="cov0" title="0">return i</span>
+}
+
+func GetMaxNumber(arr []int) int <span class="cov0" title="0">{
+        max := 0
+        for _, val := range arr </span><span class="cov0" title="0">{
+                if val &gt; max </span><span class="cov0" title="0">{
+                        max = val
+                }</span>
+        }
+        <span class="cov0" title="0">return max</span>
+}
+
+func CheckName(name string) error <span class="cov0" title="0">{
+        reg, _ := regexp.Compile("[a-z]([-a-z0-9]*[a-z0-9])?")
+        filtered := reg.FindString(name)
+
+        if filtered != name </span><span class="cov0" title="0">{
+                return errors.New(name + ": The first character of name must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.")
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+
+func CheckIpCidr(name string, val string) error <span class="cov0" title="0">{
+        reg, _ := regexp.Compile("^((?:\\d{1,3}.){3}\\d{1,3})\\/(\\d{1,2})$")
+        filtered := reg.FindString(val)
+
+        if filtered != val </span><span class="cov0" title="0">{
+                return errors.New(fmt.Sprintf("%s %s : Type mismatch ex)10.244.0.0/16", name, val))
+        }</span>
+        <span class="cov0" title="0">return nil</span>
+}
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>
